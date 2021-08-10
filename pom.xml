@@ -64,6 +64,23 @@
       </build>
       <id>MultiplyAndDivide</id>
     </profile>
+    <profile>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <suiteXmlFiles>
+                <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+              </suiteXmlFiles>
+            </configuration>
+            <groupId>org.apache.maven.plugins</groupId>
+            <version>3.0.0-M3</version>
+          </plugin>
+        </plugins>
+      </build>
+      <id>All</id>
+    </profile>
   </profiles>
 
   <properties>

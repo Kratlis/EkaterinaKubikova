@@ -15,6 +15,9 @@
         <include name="all-groups"/>
       </run>
     </groups>
+    <packages>
+      <package name="com.epam.tc"/>
+    </packages>
   </test>
 </suite>
 
