@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>ekaterina_kubikova</artifactId>
+
+  <dependencies>
+    <dependency>
+      <artifactId>calculator</artifactId>
+      <groupId>calculator</groupId>
+      <scope>system</scope>
+      <systemPath>${archive.file}</systemPath>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>testng</artifactId>
+      <groupId>org.testng</groupId>
+      <scope>test</scope>
+      <version>7.4.0</version>
+    </dependency>
+    <dependency>
+      <artifactId>assertj-core</artifactId>
+      <groupId>org.assertj</groupId>
+      <scope>test</scope>
+      <version>3.20.2</version>
+    </dependency>
+  </dependencies>
+
+  <groupId>com.epam.tc</groupId>
+  <modelVersion>4.0.0</modelVersion>
+
+  <profiles>
+    <profile>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <suiteXmlFiles>
+                <suiteXmlFile>src/test/resources/suite1.xml</suiteXmlFile>
+              </suiteXmlFiles>
+            </configuration>
+            <groupId>org.apache.maven.plugins</groupId>
+            <version>3.0.0-M3</version>
+          </plugin>
+        </plugins>
+      </build>
+      <id>SumAndSubtract</id>
+    </profile>
+    <profile>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <suiteXmlFiles>
+                <suiteXmlFile>${test.resources.dir}/suite2.xml</suiteXmlFile>
+              </suiteXmlFiles>
+            </configuration>
+            <groupId>org.apache.maven.plugins</groupId>
+            <version>3.0.0-M3</version>
+          </plugin>
+        </plugins>
+      </build>
+      <id>MultiplyAndDivide</id>
+    </profile>
+  </profiles>
+
+  <properties>
+    <archive.file>C:/Projects/Java/testAuto/frameworks/calculator-1.0.jar</archive.file>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <test.resources.dir>${project.basedir}/src/test/resources</test.resources.dir>
+  </properties>
+
+
+  <version>1.0-SNAPSHOT</version>
+
+
+</project>

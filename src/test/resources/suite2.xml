@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Multiply and Divide" verbose="1">
+
+  <test name="Multiply">
+    <groups>
+      <define name="multiply-group">
+        <include name="multiply" />
+      </define>
+      <run>
+        <include name="multiply-group"/>
+      </run>
+    </groups>
+  </test>
+
+  <test name="Divide">
+    <groups>
+      <define name="divide-group">
+        <include name="divide"/>
+      </define>
+      <run>
+        <include name="divide-group"/>
+      </run>
+    </groups>
+  </test>
+
+</suite>
+
+
