@@ -3,95 +3,118 @@
     xmlns="http://maven.apache.org/POM/4.0.0"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <artifactId>ekaterina_kubikova</artifactId>
+  <groupId>com.epam.tc</groupId>
+  <version>1.0-SNAPSHOT</version>
+  <modelVersion>4.0.0</modelVersion>
+
+  <properties>
+    <assertj-core.version>3.20.2</assertj-core.version>
+    <calculator.version>1.0</calculator.version>
+    <checkstyle.version>8.42</checkstyle.version>
+    <logback-classic.version>1.2.5</logback-classic.version>
+    <lombok.version>1.18.20</lombok.version>
+    <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
+    <selenium-java.version>3.141.59</selenium-java.version>
+    <testng.version>7.4.0</testng.version>
+
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <archive.file>${basedir}/../frameworks/calculator-1.0.jar</archive.file>
+    <testng.configs.path>${project.build.testOutputDirectory}/testng</testng.configs.path>
+    <testng.suite.file>${testng.configs.path}/suiteAll.xml</testng.suite.file>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>${maven-checkstyle-plugin.version}</version>
+        <configuration>
+          <configLocation>
+            <!--  pay attention to use exact url for checkstyle plugin ruleset  -->
+            https://raw.githubusercontent.com/DmitryKhodakovsky/epam-training-center-code-checkers-configurations/main/checkstyle/checkstyle.xml
+          </configLocation>
+          <consoleOutput>true</consoleOutput>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <failsOnError>true</failsOnError>
+          <includeTestSourceDirectory>true</includeTestSourceDirectory>
+          <linkXRef>false</linkXRef>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <artifactId>checkstyle</artifactId>
+            <groupId>com.puppycrawl.tools</groupId>
+            <version>${checkstyle.version}</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <id>validate</id>
+            <phase>validate</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>${maven-surefire-plugin.version}</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>${testng.suite.file}</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
   <dependencies>
     <dependency>
       <artifactId>calculator</artifactId>
       <groupId>calculator</groupId>
+      <version>${calculator.version}</version>
       <scope>system</scope>
       <systemPath>${archive.file}</systemPath>
-      <version>1.0</version>
     </dependency>
     <dependency>
       <artifactId>testng</artifactId>
       <groupId>org.testng</groupId>
+      <version>${testng.version}</version>
       <scope>test</scope>
-      <version>7.4.0</version>
     </dependency>
     <dependency>
       <artifactId>assertj-core</artifactId>
       <groupId>org.assertj</groupId>
+      <version>${assertj-core.version}</version>
       <scope>test</scope>
-      <version>3.20.2</version>
     </dependency>
   </dependencies>
 
-  <groupId>com.epam.tc</groupId>
-  <modelVersion>4.0.0</modelVersion>
-
   <profiles>
     <profile>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-              <suiteXmlFiles>
-                <suiteXmlFile>src/test/resources/suite1.xml</suiteXmlFile>
-              </suiteXmlFiles>
-            </configuration>
-            <groupId>org.apache.maven.plugins</groupId>
-            <version>3.0.0-M3</version>
-          </plugin>
-        </plugins>
-      </build>
-      <id>SumAndSubtract</id>
-    </profile>
-    <profile>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-              <suiteXmlFiles>
-                <suiteXmlFile>${test.resources.dir}/suite2.xml</suiteXmlFile>
-              </suiteXmlFiles>
-            </configuration>
-            <groupId>org.apache.maven.plugins</groupId>
-            <version>3.0.0-M3</version>
-          </plugin>
-        </plugins>
-      </build>
-      <id>MultiplyAndDivide</id>
-    </profile>
-    <profile>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <configuration>
-              <suiteXmlFiles>
-                <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-              </suiteXmlFiles>
-            </configuration>
-            <groupId>org.apache.maven.plugins</groupId>
-            <version>3.0.0-M3</version>
-          </plugin>
-        </plugins>
-      </build>
       <id>All</id>
+      <properties>
+        <testng.suite.file>${testng.configs.path}/suiteAll.xml</testng.suite.file>
+      </properties>
+    </profile>
+    <profile>
+      <id>SumAndSubtract</id>
+      <properties>
+        <testng.suite.file>${testng.configs.path}/suiteSumSubtract.xml</testng.suite.file>
+      </properties>
+    </profile>
+    <profile>
+      <id>MultiplyAndDivide</id>
+      <properties>
+        <testng.suite.file>${testng.configs.path}/suiteMultiplyDivide.xml</testng.suite.file>
+      </properties>
     </profile>
   </profiles>
-
-  <properties>
-    <archive.file>C:/Projects/Java/testAuto/frameworks/calculator-1.0.jar</archive.file>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
-    <test.resources.dir>${project.basedir}/src/test/resources</test.resources.dir>
-  </properties>
-
-
-  <version>1.0-SNAPSHOT</version>
-
 
 </project>
