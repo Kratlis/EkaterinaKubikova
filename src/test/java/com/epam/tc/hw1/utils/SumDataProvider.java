@@ -1,4 +1,4 @@
-package com.epam.tc.utils;
+package com.epam.tc.hw1.utils;
 
 import org.testng.annotations.DataProvider;
 

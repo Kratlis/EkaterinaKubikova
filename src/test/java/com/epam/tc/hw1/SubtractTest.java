@@ -1,9 +1,10 @@
-package com.epam.tc;
+package com.epam.tc.hw1;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.offset;
 
 import com.epam.tat.module4.Calculator;
-import com.epam.tc.utils.SubtractDataProvider;
+import com.epam.tc.hw1.utils.SubtractDataProvider;
 import org.testng.annotations.Test;
 
 public class SubtractTest {
@@ -32,7 +33,7 @@ public class SubtractTest {
         Calculator calculator = new Calculator();
         double actual = calculator.sub(a, b);
         assertThat(actual)
-            .isEqualTo(res);
+            .isEqualTo(res, offset(1E-6));
     }
 
 }

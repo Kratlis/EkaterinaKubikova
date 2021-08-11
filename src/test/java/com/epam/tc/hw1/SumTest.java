@@ -1,9 +1,9 @@
-package com.epam.tc;
+package com.epam.tc.hw1;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.epam.tat.module4.Calculator;
-import com.epam.tc.utils.SumDataProvider;
+import com.epam.tc.hw1.utils.SumDataProvider;
 import org.testng.annotations.Test;
 
 public class SumTest {

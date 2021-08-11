@@ -1,4 +1,4 @@
-package com.epam.tc.utils;
+package com.epam.tc.hw1.utils;
 
 import org.testng.annotations.DataProvider;
 
@@ -15,12 +15,10 @@ public class MultiplyDataProvider {
     }
 
     @DataProvider(name = "big multiply data")
-    public static Object[][] bigData() {
+    public static Object[][] bigDoubleData() {
         return new Object[][]{
             {Long.MAX_VALUE, 1, Long.MAX_VALUE},
-            {Long.MAX_VALUE, -1, -Long.MAX_VALUE},
-            {-1, Long.MIN_VALUE, -9223372036854775808L},
-            {Long.MAX_VALUE, 2, 1.8446744E19}};
+            {Long.MAX_VALUE, -1, -Long.MAX_VALUE}};
     }
 
     @DataProvider(name = "double multiply data")

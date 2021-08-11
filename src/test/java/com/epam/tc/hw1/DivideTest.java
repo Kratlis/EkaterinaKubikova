@@ -1,10 +1,10 @@
-package com.epam.tc;
+package com.epam.tc.hw1;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
 
 import com.epam.tat.module4.Calculator;
-import com.epam.tc.utils.DivideDataProvider;
+import com.epam.tc.hw1.utils.DivideDataProvider;
 import org.testng.annotations.Test;
 
 public class DivideTest {
