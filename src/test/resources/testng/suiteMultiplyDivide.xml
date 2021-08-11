@@ -12,6 +12,9 @@
         <include name="multiply-group"/>
       </run>
     </groups>
+    <classes>
+      <class name="com.epam.tc.hw1.MultiplyTest"/>
+    </classes>
   </test>
 
   <test name="Divide">
@@ -23,6 +26,9 @@
         <include name="divide-group"/>
       </run>
     </groups>
+    <classes>
+      <class name="com.epam.tc.hw1.DivideTest"/>
+    </classes>
   </test>
 
 </suite>

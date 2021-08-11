@@ -12,11 +12,8 @@
         <include name="sum-group"/>
       </run>
     </groups>
-<!--    <packages>-->
-<!--      <package name="com.epam.tc"/>-->
-<!--    </packages>-->
     <classes>
-      <class name="com.epam.tc.SumTest"/>
+      <class name="com.epam.tc.hw1.SumTest"/>
     </classes>
   </test>
 
@@ -29,9 +26,9 @@
         <include name="subtract-group"/>
       </run>
     </groups>
-    <packages>
-      <package name="com.epam.tc"/>
-    </packages>
+    <classes>
+      <class name="com.epam.tc.hw1.SubtractTest"/>
+    </classes>
   </test>
 
 </suite>
