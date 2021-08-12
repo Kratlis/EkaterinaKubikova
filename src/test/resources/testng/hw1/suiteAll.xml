@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="SuiteAll" verbose="1">
+
+  <test name="All tests">
+    <groups>
+      <define name="all-groups">
+        <include name="sum"/>
+        <include name="subtract"/>
+        <include name="multiply"/>
+        <include name="divide"/>
+      </define>
+      <run>
+        <include name="all-groups"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.epam.tc.hw1"/>
+    </packages>
+  </test>
+</suite>
+
+

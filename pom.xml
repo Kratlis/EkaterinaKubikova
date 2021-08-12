@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>ekaterina_kubikova</artifactId>
+  <groupId>com.epam.tc</groupId>
+  <version>1.0-SNAPSHOT</version>
+  <modelVersion>4.0.0</modelVersion>
+
+  <properties>
+    <assertj-core.version>3.20.2</assertj-core.version>
+    <calculator.version>1.0</calculator.version>
+    <checkstyle.version>8.42</checkstyle.version>
+    <logback-classic.version>1.2.5</logback-classic.version>
+    <lombok.version>1.18.20</lombok.version>
+    <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
+    <selenium-java.version>3.141.59</selenium-java.version>
+    <testng.version>7.4.0</testng.version>
+
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <test.resources.dir>${project.build.testSourceDirectory}/../resources</test.resources.dir>
+    <calculator.file>${test.resources.dir}/calculator-1.0.jar</calculator.file>
+    <testng.hw1.configs.path>${test.resources.dir}/testng/hw1</testng.hw1.configs.path>
+    <testng.suite.file>${testng.hw1.configs.path}/suiteAll.xml</testng.suite.file>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>${maven-checkstyle-plugin.version}</version>
+        <configuration>
+          <configLocation>
+            <!--  pay attention to use exact url for checkstyle plugin ruleset  -->
+            https://raw.githubusercontent.com/DmitryKhodakovsky/epam-training-center-code-checkers-configurations/main/checkstyle/checkstyle.xml
+          </configLocation>
+          <consoleOutput>true</consoleOutput>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <failsOnError>true</failsOnError>
+          <includeTestSourceDirectory>true</includeTestSourceDirectory>
+          <linkXRef>false</linkXRef>
+        </configuration>
+        <dependencies>
+          <dependency>
+            <artifactId>checkstyle</artifactId>
+            <groupId>com.puppycrawl.tools</groupId>
+            <version>${checkstyle.version}</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <id>validate</id>
+            <phase>validate</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>${maven-surefire-plugin.version}</version>
+        <configuration>
+          <suiteXmlFiles>
+            <suiteXmlFile>${testng.suite.file}</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <artifactId>calculator</artifactId>
+      <groupId>calculator</groupId>
+      <version>${calculator.version}</version>
+      <scope>system</scope>
+      <systemPath>${calculator.file}</systemPath>
+    </dependency>
+    <dependency>
+      <artifactId>testng</artifactId>
+      <groupId>org.testng</groupId>
+      <version>${testng.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <artifactId>assertj-core</artifactId>
+      <groupId>org.assertj</groupId>
+      <version>${assertj-core.version}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <profiles>
+    <profile>
+      <id>All</id>
+      <properties>
+        <testng.suite.file>${testng.hw1.configs.path}/suiteAll.xml</testng.suite.file>
+      </properties>
+    </profile>
+    <profile>
+      <id>SumAndSubtract</id>
+      <properties>
+        <testng.suite.file>${testng.hw1.configs.path}/suiteSumSubtract.xml</testng.suite.file>
+      </properties>
+    </profile>
+    <profile>
+      <id>MultiplyAndDivide</id>
+      <properties>
+        <testng.suite.file>${testng.hw1.configs.path}/suiteMultiplyDivide.xml</testng.suite.file>
+      </properties>
+    </profile>
+  </profiles>
+
+</project>
