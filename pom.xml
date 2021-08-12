@@ -22,9 +22,10 @@
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <archive.file>${basedir}/../frameworks/calculator-1.0.jar</archive.file>
-    <testng.configs.path>${project.build.testOutputDirectory}/testng</testng.configs.path>
-    <testng.suite.file>${testng.configs.path}/suiteAll.xml</testng.suite.file>
+    <test.resources.dir>${project.build.testSourceDirectory}/../resources</test.resources.dir>
+    <calculator.file>${test.resources.dir}/calculator-1.0.jar</calculator.file>
+    <testng.hw1.configs.path>${test.resources.dir}/testng/hw1</testng.hw1.configs.path>
+    <testng.suite.file>${testng.hw1.configs.path}/suiteAll.xml</testng.suite.file>
   </properties>
 
   <build>
@@ -80,7 +81,7 @@
       <groupId>calculator</groupId>
       <version>${calculator.version}</version>
       <scope>system</scope>
-      <systemPath>${archive.file}</systemPath>
+      <systemPath>${calculator.file}</systemPath>
     </dependency>
     <dependency>
       <artifactId>testng</artifactId>
@@ -100,19 +101,19 @@
     <profile>
       <id>All</id>
       <properties>
-        <testng.suite.file>${testng.configs.path}/suiteAll.xml</testng.suite.file>
+        <testng.suite.file>${testng.hw1.configs.path}/suiteAll.xml</testng.suite.file>
       </properties>
     </profile>
     <profile>
       <id>SumAndSubtract</id>
       <properties>
-        <testng.suite.file>${testng.configs.path}/suiteSumSubtract.xml</testng.suite.file>
+        <testng.suite.file>${testng.hw1.configs.path}/suiteSumSubtract.xml</testng.suite.file>
       </properties>
     </profile>
     <profile>
       <id>MultiplyAndDivide</id>
       <properties>
-        <testng.suite.file>${testng.configs.path}/suiteMultiplyDivide.xml</testng.suite.file>
+        <testng.suite.file>${testng.hw1.configs.path}/suiteMultiplyDivide.xml</testng.suite.file>
       </properties>
     </profile>
   </profiles>
