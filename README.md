@@ -1,1 +1,6 @@
-# EkaterinaKubikova
+# TestAuto
+
+
+## Technologies
+* Maven
+* TestNG
