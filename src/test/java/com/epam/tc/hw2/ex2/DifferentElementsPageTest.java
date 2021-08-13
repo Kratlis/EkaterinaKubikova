@@ -88,11 +88,11 @@ public class DifferentElementsPageTest {
         WebElement loginField = wait.until(ExpectedConditions.presenceOfElementLocated(
             By.id("name")
         ));
-        loginField.sendKeys("Roman");
+        loginField.sendKeys(Utils.LOGIN);
         WebElement passwordField = wait.until(ExpectedConditions.presenceOfElementLocated(
             By.id("password")
         ));
-        passwordField.sendKeys("Jdi1234");
+        passwordField.sendKeys(Utils.PASSWORD);
         WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(
             By.id("login-button")
         ));

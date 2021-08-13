@@ -13,6 +13,8 @@ public class Utils {
     public static final String HOME_PAGE_TITLE = "Home Page";
     public static final String HOME_PAGE_URL = "https://jdi-testing.github.io/jdi-light/index.html";
     public static final String USERNAME = "ROMAN IOVLEV";
+    public static final String LOGIN = "Roman";
+    public static final String PASSWORD = "Jdi1234";
     public static final int MENU_BUTTONS_NUMBER = 4;
     public static final List<String> menuButtons = new ArrayList<>(
         Arrays.asList("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS"));

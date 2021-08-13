@@ -14,8 +14,9 @@ public class Utils {
     public static final String DIFFERENT_ELEMENTS_PAGE_URL =
         "https://jdi-testing.github.io/jdi-light/different-elements.html";
     public static final String DIFFERENT_ELEMENTS_PAGE_TITLE = "Different Elements";
-
     public static final String USERNAME = "ROMAN IOVLEV";
+    public static final String LOGIN = "Roman";
+    public static final String PASSWORD = "Jdi1234";
     public static final List<String> checkboxesNames = new ArrayList<>(
         Arrays.asList("Water", "Wind")
     );
