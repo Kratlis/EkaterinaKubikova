@@ -81,7 +81,7 @@ public class HomePageTest {
 
     private void login() {
         WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(
-            By.xpath("//a[@href='#']")
+            By.className("profile-photo")
         ));
         loginButton.click();
         WebElement loginField = wait.until(ExpectedConditions.presenceOfElementLocated(
