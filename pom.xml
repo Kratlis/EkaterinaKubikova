@@ -101,6 +101,7 @@
       <artifactId>selenium-java</artifactId>
       <groupId>org.seleniumhq.selenium</groupId>
       <version>${selenium-java.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
