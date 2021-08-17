@@ -1,8 +1,8 @@
 package com.epam.tc.hw2.ex2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -17,20 +17,17 @@ public class Utils {
     public static final String USERNAME = "ROMAN IOVLEV";
     public static final String LOGIN = "Roman";
     public static final String PASSWORD = "Jdi1234";
-    public static final List<String> checkboxesNames = new ArrayList<>(
-        Arrays.asList("Water", "Wind")
-    );
-    public static final List<String> checkboxesLogs = new ArrayList<>(
-        Arrays.asList(".*Water.*true", ".*Wind.*true")
-    );
+    public static final List<String> checkboxesNames = List.of("Water", "Wind");
+    public static final List<String> checkboxesLogs = List.of(".*Water.*true", ".*Wind.*true");
     public static final String RADIO_NAME = "Selen";
     public static final String RADIO_LOG = ".*metal.*" + RADIO_NAME;
     public static final String DROPDOWN_OPTION_NAME = "Yellow";
     public static final String DROPDOWN_OPTION_LOG = ".*Colors.*" + DROPDOWN_OPTION_NAME;
 
     public static WebDriver getChromeDriver() {
-        System.setProperty(CHROME_SYSTEM_PROPERTY_NAME, CHROME_SYSTEM_PROPERTY_PATH);
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
         return driver;
