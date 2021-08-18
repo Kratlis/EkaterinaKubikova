@@ -28,6 +28,7 @@
     <calculator.file>${test.resources.dir}/calculator-1.0.jar</calculator.file>
     <testng.hw1.configs.path>${test.resources.dir}/testng/hw1</testng.hw1.configs.path>
     <testng.hw2.configs.path>${test.resources.dir}/testng/hw2</testng.hw2.configs.path>
+    <testng.hw3.configs.path>${test.resources.dir}/testng/hw3</testng.hw3.configs.path>
     <testng.suite.file>${testng.hw1.configs.path}/suiteAll.xml</testng.suite.file>
   </properties>
 
@@ -102,7 +103,6 @@
       <artifactId>selenium-java</artifactId>
       <groupId>org.seleniumhq.selenium</groupId>
       <version>${selenium-java.version}</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
@@ -113,6 +113,7 @@
   </dependencies>
 
   <profiles>
+
     <profile>
       <id>Calculator All</id>
       <properties>
@@ -131,6 +132,7 @@
         <testng.suite.file>${testng.hw1.configs.path}/suiteMultiplyDivide.xml</testng.suite.file>
       </properties>
     </profile>
+
     <profile>
       <id>Selenium Exercise 1</id>
       <properties>
@@ -143,6 +145,20 @@
         <testng.suite.file>${testng.hw2.configs.path}/exercise2.suite.xml</testng.suite.file>
       </properties>
     </profile>
+
+    <profile>
+      <id>Page Object Exercise 1</id>
+      <properties>
+        <testng.suite.file>${testng.hw3.configs.path}/exercise1.suite.xml</testng.suite.file>
+      </properties>
+    </profile>
+    <profile>
+      <id>Page Object Exercise 2</id>
+      <properties>
+        <testng.suite.file>${testng.hw3.configs.path}/exercise2.suite.xml</testng.suite.file>
+      </properties>
+    </profile>
+
   </profiles>
 
 </project>
