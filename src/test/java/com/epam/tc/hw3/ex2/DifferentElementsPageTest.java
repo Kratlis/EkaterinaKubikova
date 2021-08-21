@@ -36,7 +36,7 @@ public class DifferentElementsPageTest {
 
     @Test(dataProvider = "selected option, radio, checkboxes",
           dataProviderClass = DifferentElementsPageDataProvider.class)
-    public void testHomePage(String dropdownOption, String radio, String... checkboxes) {
+    public void testDifferentElementsPage(String dropdownOption, String radio, String... checkboxes) {
         SoftAssertions softAssertion = new SoftAssertions();
         // 1. Open test site by URL
         openHomePage();
