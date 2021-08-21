@@ -30,7 +30,7 @@ public class DifferentElementsPageTest {
     }
 
     @Test
-    public void testHomePage() {
+    public void testDifferentElementsPage() {
         SoftAssertions softAssert = new SoftAssertions();
         // 1. Open test site by URL
         openSite();
