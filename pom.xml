@@ -13,6 +13,9 @@
     <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+    <allure.maven.version>2.10.0</allure.maven.version>
+    <allure.version>2.14.0</allure.version>
+    <aspectj.version>1.9.6</aspectj.version>
     <assertj-core.version>3.20.2</assertj-core.version>
     <calculator.version>1.0</calculator.version>
     <checkstyle.version>8.42</checkstyle.version>
@@ -29,6 +32,7 @@
     <testng.hw1.configs.path>${test.resources.dir}/testng/hw1</testng.hw1.configs.path>
     <testng.hw2.configs.path>${test.resources.dir}/testng/hw2</testng.hw2.configs.path>
     <testng.hw3.configs.path>${test.resources.dir}/testng/hw3</testng.hw3.configs.path>
+    <testng.hw4.configs.path>${test.resources.dir}/testng/hw4</testng.hw4.configs.path>
     <testng.suite.file>${testng.hw1.configs.path}/suiteAll.xml</testng.suite.file>
   </properties>
 
@@ -71,10 +75,20 @@
         <groupId>org.apache.maven.plugins</groupId>
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
+          <argLine>
+            -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+          </argLine>
           <suiteXmlFiles>
             <suiteXmlFile>${testng.suite.file}</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>
@@ -99,6 +113,7 @@
       <version>${assertj-core.version}</version>
       <scope>test</scope>
     </dependency>
+
     <dependency>
       <artifactId>selenium-java</artifactId>
       <groupId>org.seleniumhq.selenium</groupId>
@@ -110,10 +125,17 @@
       <version>${wdm.version}</version>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-testng</artifactId>
+      <version>${allure.version}</version>
+      <scope>test</scope>
+    </dependency>
+
   </dependencies>
 
   <profiles>
-
     <profile>
       <id>Calculator All</id>
       <properties>
@@ -159,6 +181,29 @@
       </properties>
     </profile>
 
+    <profile>
+      <id>Steps</id>
+      <properties>
+        <testng.suite.file>${testng.hw4.configs.path}/exercise1.suite.xml</testng.suite.file>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
   </profiles>
 
+
+  <reporting>
+    <excludeDefaults>true</excludeDefaults>
+    <plugins>
+      <plugin>
+        <groupId>io.qameta.allure</groupId>
+        <artifactId>allure-maven</artifactId>
+        <version>${allure.maven.version}</version>
+        <configuration>
+          <reportVersion>${allure.version}</reportVersion>
+        </configuration>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>
