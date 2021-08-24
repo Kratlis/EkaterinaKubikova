@@ -3,9 +3,9 @@
 
 <suite name="Exercise 1" verbose="1">
 
-  <test name="Home Page Test">
+  <test name="Index Page Test">
     <classes>
-      <class name="com.epam.tc.hw2.ex1.HomePageTest"/>
+      <class name="com.epam.tc.hw2.ex1.IndexPageTest"/>
     </classes>
   </test>
 </suite>
