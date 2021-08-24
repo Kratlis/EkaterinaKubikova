@@ -97,8 +97,8 @@ public class IndexPageTest extends HomePageTest {
                     By.cssSelector("[value='Frame Button']")
                 ));
                 break;
-            } catch (NoSuchElementException ignored) {
-                continue;
+            } catch (NoSuchElementException e) {
+                e.printStackTrace();
             } finally {
                 driver.switchTo().defaultContent();
             }
