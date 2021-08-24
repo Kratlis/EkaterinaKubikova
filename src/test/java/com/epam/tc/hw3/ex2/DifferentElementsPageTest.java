@@ -1,70 +1,52 @@
 package com.epam.tc.hw3.ex2;
 
+import com.epam.tc.hw3.HomePageTest;
+import com.epam.tc.hw3.Utils;
 import com.epam.tc.hw3.ex2.components.CheckboxRowComponent;
 import com.epam.tc.hw3.ex2.components.LogComponent;
 import com.epam.tc.hw3.ex2.pages.AuthorizedHomePage;
 import com.epam.tc.hw3.ex2.pages.DifferentElementsPage;
-import com.epam.tc.hw3.ex2.pages.UnauthorizedHomePage;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.assertj.core.api.SoftAssertions;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class DifferentElementsPageTest {
-    private WebDriver driver;
-    private UnauthorizedHomePage unauthorizedHomePage;
-    private AuthorizedHomePage authorizedHomePage;
+public class DifferentElementsPageTest extends HomePageTest {
     private DifferentElementsPage differentElementsPage;
-
-    @BeforeMethod
-    public void prepareDriver() {
-        driver = Utils.getChromeDriver();
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-    }
-
-    // 12. Close Browser
-    @AfterMethod
-    private void close() {
-        driver.quit();
-    }
 
     @Test(dataProvider = "selected option, radio, checkboxes",
           dataProviderClass = DifferentElementsPageDataProvider.class)
     public void testDifferentElementsPage(String dropdownOption, String radio, String... checkboxes) {
-        SoftAssertions softAssertion = new SoftAssertions();
+        SoftAssertions softAssertions = new SoftAssertions();
         // 1. Open test site by URL
         openHomePage();
 
         // 2. Assert Browser title
-        pageOpenTest(softAssertion);
+        homePageOpenTest(softAssertions, unauthorizedHomePage);
 
         // 3. Perform login
         login();
 
         // 4. Assert User name in the left-top side of screen that user is logged
-        loginTest(softAssertion);
+        loginTest(softAssertions);
 
         // 5. Open through the header menu Service -> Different Elements Page
         openDifferentElementsPage();
-        pageDifferentElementsOpenTest(softAssertion);
+        pageDifferentElementsOpenTest(softAssertions);
 
         // 6. Select checkboxes
         selectCheckboxes(checkboxes);
-        selectCheckboxesTest(softAssertion, checkboxes);
+        selectCheckboxesTest(softAssertions, checkboxes);
 
         // 7. Select radio
         selectRadio(radio);
-        selectRadioTest(softAssertion, radio);
+        selectRadioTest(softAssertions, radio);
 
         // 8. Select in dropdown
         selectDropdown(dropdownOption);
-        selectDropdownTest(softAssertion, dropdownOption);
+        selectDropdownTest(softAssertions, dropdownOption);
 
         // 9. Assert that
         //      - for each checkbox there is an individual log row and value is corresponded
@@ -72,33 +54,8 @@ public class DifferentElementsPageTest {
         //      - for radio button there is a log row and value is corresponded to the status
         //        of radio button
         //      - for dropdown there is a log row and value is corresponded to the selected value
-        logTest(softAssertion, dropdownOption, radio, checkboxes);
-        softAssertion.assertAll();
-    }
-
-    private void openHomePage() {
-        unauthorizedHomePage = new UnauthorizedHomePage(driver);
-    }
-
-    private void pageOpenTest(SoftAssertions softAssertion) {
-        softAssertion.assertThat(unauthorizedHomePage.getUrl())
-                     .isEqualTo(Utils.HOME_PAGE_URL);
-        softAssertion.assertThat(unauthorizedHomePage.getTitle())
-                     .isEqualTo(Utils.HOME_PAGE_TITLE);
-    }
-
-    private void login() {
-        PropertyFileReader reader = new PropertyFileReader(Utils.PROPERTY_FILE_PATH);
-        String name = reader.readName();
-        String password = reader.readPassword();
-        authorizedHomePage = unauthorizedHomePage.login(name, password);
-    }
-
-    private void loginTest(SoftAssertions softAssertion) {
-        PropertyFileReader reader = new PropertyFileReader(Utils.PROPERTY_FILE_PATH);
-        String expectedUsername = reader.readUsername();
-        String actualUsername = authorizedHomePage.getUsername();
-        softAssertion.assertThat(actualUsername).isEqualTo(expectedUsername);
+        logTest(softAssertions, dropdownOption, radio, checkboxes);
+        softAssertions.assertAll();
     }
 
     private void openDifferentElementsPage() {

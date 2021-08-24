@@ -12,7 +12,7 @@ public class ServiceMenuComponent extends AbstractComponent {
     @FindBy(xpath = "//*[text()='Different elements']")
     WebElement differentElementsItem;
 
-    protected ServiceMenuComponent(WebDriver driver) {
+    public ServiceMenuComponent(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
         wait.until(ExpectedConditions.elementToBeClickable(differentElementsItem));

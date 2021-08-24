@@ -1,4 +1,4 @@
-package com.epam.tc.hw3.ex1;
+package com.epam.tc.hw3;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.List;
@@ -8,9 +8,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Utils {
     public static final String HOME_PAGE_TITLE = "Home Page";
+    public static final String DIFFERENT_ELEMENTS_PAGE_TITLE = "Different Elements";
     public static final String HOME_PAGE_URL = "https://jdi-testing.github.io/jdi-light/index.html";
+    public static final String DIFFERENT_ELEMENTS_PAGE_URL =
+        "https://jdi-testing.github.io/jdi-light/different-elements.html";
     public static final String PROPERTY_FILE_PATH = "src/test/resources/test.properties";
-    public static final List<String> menuButtons = List.of("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS");
+    public static final List<String> menuButtons =
+        List.of("HOME", "CONTACT FORM", "SERVICE", "METALS & COLORS");
     public static final int IMAGES_NUMBER = 4;
     public static final List<String> imagesTexts = List.of(
         "To include good practices\nand ideas from successful\nEPAM project",
@@ -25,6 +29,12 @@ public class Utils {
         "Elements packs"
     );
     public static final int FRAME_NUMBER = 4;
+    public static final List<String> checkboxesNames = List.of("Water", "Wind");
+    public static final String CHECKBOX_LOG_VALUE = "true";
+    public static final String RADIO_NAME = "Selen";
+    public static final String RADIO_LOG_VALUE = "metal";
+    public static final String DROPDOWN_OPTION_NAME = "Yellow";
+    public static final String DROPDOWN_LOG_VALUE = "Colors";
 
     public static WebDriver getChromeDriver() {
         WebDriverManager.chromedriver().setup();

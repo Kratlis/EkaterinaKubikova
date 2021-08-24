@@ -2,6 +2,7 @@ package com.epam.tc.hw3.ex1.pages;
 
 import com.epam.tc.hw3.ex1.components.HeaderComponent;
 import com.epam.tc.hw3.ex1.components.LeftSectionComponent;
+import com.epam.tc.hw3.ex2.pages.DifferentElementsPage;
 import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -40,6 +41,10 @@ public class HomePage extends AbstractPage {
         wait.until(ExpectedConditions.visibilityOfAllElements(images));
         wait.until(ExpectedConditions.visibilityOfAllElements(texts));
         wait.until(ExpectedConditions.visibilityOfAllElements(iframes));
+    }
+
+    public DifferentElementsPage openDifferentElementsPage() {
+        return header.openServiceMenuItem().choseDifferentElements();
     }
 
     public List<WebElement> getImages() {

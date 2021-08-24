@@ -5,7 +5,7 @@
 
   <test name="Home Page Test">
     <classes>
-      <class name="com.epam.tc.hw3.ex1.HomePageTest"/>
+      <class name="com.epam.tc.hw3.ex1.IndexPageTest"/>
     </classes>
   </test>
 </suite>

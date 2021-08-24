@@ -1,13 +1,13 @@
-package com.epam.tc.hw3.ex1;
+package com.epam.tc.hw3;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
 public class PropertyFileReader {
-    private final String name = "name";
-    private final String password = "password";
-    private final String username = "username";
+    private static final String NAME = "name";
+    private static final String PASSWORD = "password";
+    private static final String USERNAME = "username";
     private Properties properties;
 
     public PropertyFileReader(String path) {
@@ -22,14 +22,14 @@ public class PropertyFileReader {
     }
 
     public String readName() {
-        return properties.getProperty(name);
+        return properties.getProperty(NAME);
     }
 
     public String readPassword() {
-        return properties.getProperty(password);
+        return properties.getProperty(PASSWORD);
     }
 
     public String readUsername() {
-        return properties.getProperty(username);
+        return properties.getProperty(USERNAME);
     }
 }
