@@ -10,17 +10,27 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class LogComponent extends AbstractComponent {
 
     @FindBy(css = ".logs li")
-    List<WebElement> logRows;
+    public List<WebElement> logRows;
 
     public LogComponent(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
-        wait.until(ExpectedConditions.visibilityOfAllElements(logRows));
     }
 
-    public boolean containsElementLog(String elementName, String expectedValue) {
+    public boolean containsLog(String elementName, String expectedValue) {
+        wait.until(ExpectedConditions.visibilityOfAllElements(logRows));
         for (WebElement row : logRows) {
             if (row.getText().matches(".*" + elementName + ".*" + expectedValue)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean containsLog(String expectedValue) {
+        wait.until(ExpectedConditions.visibilityOfAllElements(logRows));
+        for (WebElement row : logRows) {
+            if (row.getText().matches(".*" + expectedValue + ".*")) {
                 return true;
             }
         }

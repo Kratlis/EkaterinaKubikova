@@ -1,6 +1,7 @@
 package com.epam.tc.hw3.ex2.pages;
 
 import com.epam.tc.hw3.ex2.components.HeaderComponent;
+import com.epam.tc.hw3.ex2.components.ServiceMenuComponent;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage extends AbstractPage {
@@ -21,7 +22,12 @@ public class HomePage extends AbstractPage {
     }
 
     public DifferentElementsPage openDifferentElementsPage() {
-        return header.openServiceMenuItem().choseDifferentElements();
+        return header.openServiceMenuItem().chooseDifferentElements();
+    }
+
+    public ServiceMenuComponent openServiceMenuComponent() {
+        return header.openServiceMenuItem();
+
     }
 
     public HeaderComponent getHeader() {

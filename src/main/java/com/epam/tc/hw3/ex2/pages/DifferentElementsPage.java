@@ -9,7 +9,8 @@ import org.openqa.selenium.WebDriver;
 
 public class DifferentElementsPage extends AbstractPage {
 
-    static final String DIFFERENT_ELEMENTS_PAGE_URL = "https://jdi-testing.github.io/jdi-light/different-elements.html";
+    static final String DIFFERENT_ELEMENTS_PAGE_URL =
+        "https://jdi-testing.github.io/jdi-light/different-elements.html";
     protected HeaderComponent header;
 
     CheckboxRowComponent checkboxRow;

@@ -44,7 +44,7 @@ public class HomePage extends AbstractPage {
     }
 
     public DifferentElementsPage openDifferentElementsPage() {
-        return header.openServiceMenuItem().choseDifferentElements();
+        return header.openServiceMenuItem().chooseDifferentElements();
     }
 
     public List<WebElement> getImages() {
