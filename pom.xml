@@ -2,12 +2,17 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="http://maven.apache.org/POM/4.0.0"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
   <artifactId>ekaterina_kubikova</artifactId>
   <groupId>com.epam.tc</groupId>
   <version>1.0-SNAPSHOT</version>
-  <modelVersion>4.0.0</modelVersion>
 
   <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
     <assertj-core.version>3.20.2</assertj-core.version>
     <calculator.version>1.0</calculator.version>
     <checkstyle.version>8.42</checkstyle.version>
@@ -17,14 +22,12 @@
     <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
     <selenium-java.version>3.141.59</selenium-java.version>
     <testng.version>7.4.0</testng.version>
-
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <wdm.version>4.4.3</wdm.version>
 
     <test.resources.dir>${project.build.testSourceDirectory}/../resources</test.resources.dir>
     <calculator.file>${test.resources.dir}/calculator-1.0.jar</calculator.file>
     <testng.hw1.configs.path>${test.resources.dir}/testng/hw1</testng.hw1.configs.path>
+    <testng.hw2.configs.path>${test.resources.dir}/testng/hw2</testng.hw2.configs.path>
     <testng.suite.file>${testng.hw1.configs.path}/suiteAll.xml</testng.suite.file>
   </properties>
 
@@ -95,25 +98,49 @@
       <version>${assertj-core.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <artifactId>selenium-java</artifactId>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <version>${selenium-java.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.github.bonigarcia</groupId>
+      <artifactId>webdrivermanager</artifactId>
+      <version>${wdm.version}</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <profiles>
     <profile>
-      <id>All</id>
+      <id>Calculator All</id>
       <properties>
         <testng.suite.file>${testng.hw1.configs.path}/suiteAll.xml</testng.suite.file>
       </properties>
     </profile>
     <profile>
-      <id>SumAndSubtract</id>
+      <id>Calculator SumAndSubtract</id>
       <properties>
         <testng.suite.file>${testng.hw1.configs.path}/suiteSumSubtract.xml</testng.suite.file>
       </properties>
     </profile>
     <profile>
-      <id>MultiplyAndDivide</id>
+      <id>Calculator MultiplyAndDivide</id>
       <properties>
         <testng.suite.file>${testng.hw1.configs.path}/suiteMultiplyDivide.xml</testng.suite.file>
+      </properties>
+    </profile>
+    <profile>
+      <id>Selenium Exercise 1</id>
+      <properties>
+        <testng.suite.file>${testng.hw2.configs.path}/exercise1.suite.xml</testng.suite.file>
+      </properties>
+    </profile>
+    <profile>
+      <id>Selenium Exercise 2</id>
+      <properties>
+        <testng.suite.file>${testng.hw2.configs.path}/exercise2.suite.xml</testng.suite.file>
       </properties>
     </profile>
   </profiles>
