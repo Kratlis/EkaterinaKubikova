@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class DifferentElementsPageTest extends HomePageTest {
 
     @Test
-    public void testHomePage() {
+    public void testDifferentElementsPage() {
         SoftAssertions softAssert = new SoftAssertions();
 
         // 1. Open test site by URL
