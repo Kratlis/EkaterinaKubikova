@@ -4,6 +4,7 @@ import com.epam.tc.hw3.components.LeftSectionComponent;
 import com.epam.tc.hw3.pages.FrameButtonPage;
 import com.epam.tc.hw4.HomePageTest;
 import com.epam.tc.hw4.utils.PropertyFileReader;
+import com.epam.tc.hw4.utils.ScreenshotListener;
 import com.epam.tc.hw4.utils.Utils;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
@@ -18,8 +19,10 @@ import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(ScreenshotListener.class)
 public class FailedIndexPageTest extends HomePageTest {
 
     @Test(description = "Test Home Page elements")

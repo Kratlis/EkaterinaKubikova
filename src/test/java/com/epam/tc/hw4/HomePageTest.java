@@ -10,6 +10,7 @@ import io.qameta.allure.Step;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -21,9 +22,10 @@ public class HomePageTest {
     protected AuthorizedHomePage authorizedHomePage;
 
     @BeforeMethod(description = "Prepare Chrome Web Driver")
-    protected void prepareDriver() {
+    protected void prepareDriver(ITestContext context) {
         driver = Utils.getChromeDriver();
         wait = new WebDriverWait(driver, 10);
+        context.setAttribute("WebDriver", driver);
     }
 
     // 12. Close Browser
