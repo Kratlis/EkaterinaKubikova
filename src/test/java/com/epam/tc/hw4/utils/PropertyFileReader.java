@@ -8,9 +8,10 @@ public class PropertyFileReader {
     private static final String NAME = "name";
     private static final String PASSWORD = "password";
     private static final String USERNAME = "username";
-    private Properties properties;
+    private static Properties properties;
+    PropertyFileReader propertyFileReader;
 
-    public PropertyFileReader(String path) {
+    public static void init(String path) {
         try (FileReader fileReader = new FileReader(path)) {
             properties = new Properties();
 
@@ -21,15 +22,15 @@ public class PropertyFileReader {
         }
     }
 
-    public String readName() {
+    public static String readName() {
         return properties.getProperty(NAME);
     }
 
-    public String readPassword() {
+    public static String readPassword() {
         return properties.getProperty(PASSWORD);
     }
 
-    public String readUsername() {
+    public static String readUsername() {
         return properties.getProperty(USERNAME);
     }
 }
