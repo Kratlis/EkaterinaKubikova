@@ -1,19 +1,22 @@
 package com.epam.tc.hw5.cucumber.steps;
 
-import com.epam.tc.hw3.ex2.components.LogComponent;
-import com.epam.tc.hw3.ex2.components.UserTableComponent;
+import com.epam.tc.hw3.components.LogComponent;
+import com.epam.tc.hw3.components.UserTableComponent;
 import com.epam.tc.hw5.cucumber.context.TestContext;
+import com.epam.tc.hw5.utils.ScreenshotListener;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.assertj.core.api.SoftAssertions;
+import org.testng.annotations.Listeners;
 
+@Listeners(ScreenshotListener.class)
 public class AssertionStep extends AbstractStep {
 
     @Then("The log row for checkbox {string} and checkbox status {string} "
         + "should be in logs panel on Different Elements page")
     public void testCheckboxSelectedOnDifferentElementsPage(String checkboxTitle, String checkboxStatus) {
         differentElementsPage = TestContext.getInstance().getTestObject("different_elements_page");
-        LogComponent log = differentElementsPage.getLog();
+        LogComponent log = differentElementsPage.initLogComponent();
         SoftAssertions softAssertions = new SoftAssertions();
         softAssertions.assertThat(log.containsLog(checkboxTitle, checkboxStatus)).isTrue();
         softAssertions.assertAll();
@@ -23,7 +26,7 @@ public class AssertionStep extends AbstractStep {
         + "should be in logs panel on Different Elements page")
     public void testRadioButtonSelectedOnDifferentElementsPage(String radioTitle) {
         differentElementsPage = TestContext.getInstance().getTestObject("different_elements_page");
-        LogComponent log = differentElementsPage.getLog();
+        LogComponent log = differentElementsPage.initLogComponent();
         SoftAssertions softAssertions = new SoftAssertions();
 
         softAssertions.assertThat(log.containsLog(radioTitle)).isTrue();
@@ -33,7 +36,7 @@ public class AssertionStep extends AbstractStep {
     @Then("The log row for dropdown option with value {string} should be in logs panel on Different Elements page")
     public void testDropdownOptionSelectedOnDifferentElementsPage(String option) {
         differentElementsPage = TestContext.getInstance().getTestObject("different_elements_page");
-        LogComponent log = differentElementsPage.getLog();
+        LogComponent log = differentElementsPage.initLogComponent();
 
         SoftAssertions softAssertions = new SoftAssertions();
         softAssertions.assertThat(log.containsLog(option)).isTrue();
@@ -45,7 +48,7 @@ public class AssertionStep extends AbstractStep {
         userTablePage = TestContext.getInstance().getTestObject("user_table_page");
 
         SoftAssertions softAssertions = new SoftAssertions();
-        softAssertions.assertThat(userTablePage.getTitle()).isEqualTo(pageTitle);
+        softAssertions.assertThat(userTablePage.title).isEqualTo(pageTitle);
         softAssertions.assertAll();
     }
 

@@ -1,6 +1,7 @@
 package com.epam.tc.hw5.utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Attachment;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
@@ -46,5 +47,11 @@ public class Utils {
         driver.manage().window().maximize();
 
         return driver;
+    }
+
+    @Attachment(type = "image/png", value = "{name}")
+    public static byte[] makeScreenshotAttachment(String name, byte[] source) {
+        //        Allure.addAttachment("Screenshot", new ByteArrayInputStream(source));
+        return source;
     }
 }

@@ -1,7 +1,7 @@
 package com.epam.tc.hw5.cucumber.steps;
 
-import com.epam.tc.hw3.ex2.components.ServiceMenuComponent;
-import com.epam.tc.hw3.ex2.pages.UnauthorizedHomePage;
+import com.epam.tc.hw3.components.ServiceMenuComponent;
+import com.epam.tc.hw3.pages.UnauthorizedHomePage;
 import com.epam.tc.hw5.cucumber.context.TestContext;
 import com.epam.tc.hw5.utils.PropertyFileReader;
 import com.epam.tc.hw5.utils.Utils;
@@ -14,7 +14,7 @@ public class GivenStep extends AbstractStep {
     @Given("I open JDI GitHub site")
     public void openHomePage() {
         WebDriver driver = TestContext.getInstance().getTestObject("web_driver");
-        unauthorizedHomePage = new UnauthorizedHomePage(driver);
+        unauthorizedHomePage = (UnauthorizedHomePage) new UnauthorizedHomePage(driver).open();
     }
 
     @And("I login as user {string}")
@@ -29,7 +29,7 @@ public class GivenStep extends AbstractStep {
     @Given("I click on {string} button in Header")
     public void clickMenuItemInHeader(String menuItem) {
         if (menuItem.equalsIgnoreCase(Utils.SERVICE_MENU_ITEM)) {
-            ServiceMenuComponent serviceMenuComponent = authorizedHomePage.openServiceMenuComponent();
+            ServiceMenuComponent serviceMenuComponent = authorizedHomePage.header.openServiceMenuItem();
             TestContext.getInstance().addTestObject("service_menu_component", serviceMenuComponent);
         }
     }
@@ -39,7 +39,7 @@ public class GivenStep extends AbstractStep {
         ServiceMenuComponent serviceMenuComponent =
             TestContext.getInstance().getTestObject("service_menu_component");
         if (button.equalsIgnoreCase(Utils.DIFFERENT_ELEMENTS_SERVICE_MENU_ITEM)) {
-            differentElementsPage = serviceMenuComponent.chooseDifferentElements().load();
+            differentElementsPage = serviceMenuComponent.chooseDifferentElements();
             TestContext.getInstance().addTestObject("different_elements_page", differentElementsPage);
         }
         if (button.equalsIgnoreCase(Utils.USER_TABLE_SERVICE_MENU_ITEM)) {

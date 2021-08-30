@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="Exercise 1" verbose="1">
+<suite name="JDI Site Test" verbose="1">
   <listeners>
     <listener class-name="com.epam.tc.hw5.utils.ScreenshotListener"/>
   </listeners>
-  <test name="Home Page Test">
+  <test name="JDI Site Test">
     <classes>
       <class name="com.epam.tc.hw5.cucumber.RunTests"/>
     </classes>

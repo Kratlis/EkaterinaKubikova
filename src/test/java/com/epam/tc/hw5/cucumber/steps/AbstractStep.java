@@ -1,9 +1,9 @@
 package com.epam.tc.hw5.cucumber.steps;
 
-import com.epam.tc.hw3.ex2.pages.AuthorizedHomePage;
-import com.epam.tc.hw3.ex2.pages.DifferentElementsPage;
-import com.epam.tc.hw3.ex2.pages.UnauthorizedHomePage;
-import com.epam.tc.hw3.ex2.pages.UserTablePage;
+import com.epam.tc.hw3.pages.AuthorizedHomePage;
+import com.epam.tc.hw3.pages.DifferentElementsPage;
+import com.epam.tc.hw3.pages.UnauthorizedHomePage;
+import com.epam.tc.hw3.pages.UserTablePage;
 
 public class AbstractStep {
     protected UnauthorizedHomePage unauthorizedHomePage;

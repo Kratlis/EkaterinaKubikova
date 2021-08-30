@@ -1,6 +1,5 @@
 package com.epam.tc.hw5.utils;
 
-import com.epam.tc.hw4.AttachmentDemo;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestListener;
@@ -13,7 +12,7 @@ public class ScreenshotListener implements ITestListener {
 
         if (driver != null) {
             byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-            AttachmentDemo.makeScreenshotAttachment("Screenshot on failure", screenshot);
+            Utils.makeScreenshotAttachment("Screenshot on failure", screenshot);
         }
     }
 }

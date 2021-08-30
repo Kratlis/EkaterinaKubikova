@@ -1,7 +1,7 @@
-package com.epam.tc.hw3.ex2.pages;
+package com.epam.tc.hw3.pages;
 
-import com.epam.tc.hw3.ex2.components.LogComponent;
-import com.epam.tc.hw3.ex2.components.UserTableComponent;
+import com.epam.tc.hw3.components.LogComponent;
+import com.epam.tc.hw3.components.UserTableComponent;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.openqa.selenium.WebDriver;

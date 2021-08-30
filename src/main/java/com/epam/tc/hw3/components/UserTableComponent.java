@@ -1,4 +1,4 @@
-package com.epam.tc.hw3.ex2.components;
+package com.epam.tc.hw3.components;
 
 import java.util.List;
 import java.util.stream.Collectors;
