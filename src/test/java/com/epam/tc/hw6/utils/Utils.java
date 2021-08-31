@@ -1,4 +1,4 @@
-package com.epam.tc.hw4.utils;
+package com.epam.tc.hw6.utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;
@@ -39,7 +39,7 @@ public class Utils {
 
     public static WebDriver getChromeDriver() {
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver = WebDriverSingleton.getDriver();
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 

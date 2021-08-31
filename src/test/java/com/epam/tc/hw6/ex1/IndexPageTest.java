@@ -1,10 +1,10 @@
-package com.epam.tc.hw4.ex1;
+package com.epam.tc.hw6.ex1;
 
 import com.epam.tc.hw3.components.LeftSectionComponent;
 import com.epam.tc.hw3.pages.FrameButtonPage;
-import com.epam.tc.hw4.HomePageTest;
-import com.epam.tc.hw4.utils.PropertyFileReader;
-import com.epam.tc.hw4.utils.Utils;
+import com.epam.tc.hw6.HomePageTest;
+import com.epam.tc.hw6.utils.PropertyFileReader;
+import com.epam.tc.hw6.utils.Utils;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;

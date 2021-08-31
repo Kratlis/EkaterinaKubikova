@@ -1,4 +1,4 @@
-package com.epam.tc.hw4.utils;
+package com.epam.tc.hw6.utils;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

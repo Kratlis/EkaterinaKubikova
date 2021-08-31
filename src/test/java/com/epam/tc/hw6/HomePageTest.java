@@ -1,9 +1,10 @@
-package com.epam.tc.hw4;
+package com.epam.tc.hw6;
 
 import com.epam.tc.hw3.pages.AbstractPage;
 import com.epam.tc.hw3.pages.AuthorizedHomePage;
 import com.epam.tc.hw3.pages.UnauthorizedHomePage;
-import com.epam.tc.hw4.utils.Utils;
+import com.epam.tc.hw6.utils.Utils;
+import com.epam.tc.hw6.utils.WebDriverSingleton;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
@@ -31,7 +32,7 @@ public class HomePageTest {
     // 12. Close Browser
     @AfterMethod(description = "Close browser")
     protected void close() {
-        driver.quit();
+        WebDriverSingleton.closeDriver();
     }
 
     @Step("Open Home Page")
