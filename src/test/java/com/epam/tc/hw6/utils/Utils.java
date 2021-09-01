@@ -1,11 +1,9 @@
 package com.epam.tc.hw6.utils;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Utils {
     public static final String HOME_PAGE_TITLE = "Home Page";
@@ -38,7 +36,7 @@ public class Utils {
     public static final String DROPDOWN_LOG_VALUE = "Colors";
 
     public static WebDriver getChromeDriver() {
-        WebDriverManager.chromedriver().setup();
+        //        WebDriverManager.chromedriver().setup();
         WebDriver driver = WebDriverSingleton.getDriver();
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();

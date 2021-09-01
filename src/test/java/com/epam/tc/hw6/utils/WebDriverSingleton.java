@@ -11,7 +11,7 @@ public final class WebDriverSingleton {
     }
 
     public static WebDriver getDriver() {
-        String driverType = System.getProperty("driver.type", "local");
+        String driverType = System.getProperty("driver.type", "remote");
         String browserName = System.getProperty("browser.name", "chrome");
         if (Objects.isNull(driver)) {
             driver = WebDriverFactory.createWebDriver(driverType, browserName);
