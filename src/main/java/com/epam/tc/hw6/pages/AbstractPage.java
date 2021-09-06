@@ -1,6 +1,6 @@
-package com.epam.tc.hw3.pages;
+package com.epam.tc.hw6.pages;
 
-import com.epam.tc.hw3.components.AbstractComponent;
+import com.epam.tc.hw6.components.AbstractComponent;
 import org.openqa.selenium.WebDriver;
 
 public class AbstractPage extends AbstractComponent {

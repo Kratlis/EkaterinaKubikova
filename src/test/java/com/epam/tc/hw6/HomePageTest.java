@@ -1,8 +1,8 @@
 package com.epam.tc.hw6;
 
-import com.epam.tc.hw3.pages.AbstractPage;
-import com.epam.tc.hw3.pages.AuthorizedHomePage;
-import com.epam.tc.hw3.pages.UnauthorizedHomePage;
+import com.epam.tc.hw6.pages.AbstractPage;
+import com.epam.tc.hw6.pages.AuthorizedHomePage;
+import com.epam.tc.hw6.pages.UnauthorizedHomePage;
 import com.epam.tc.hw6.utils.Utils;
 import com.epam.tc.hw6.utils.WebDriverSingleton;
 import io.qameta.allure.Severity;

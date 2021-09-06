@@ -1,10 +1,10 @@
-package com.epam.tc.hw3.pages;
+package com.epam.tc.hw6.pages;
 
-import com.epam.tc.hw3.components.CheckboxRowComponent;
-import com.epam.tc.hw3.components.DropdownListComponent;
-import com.epam.tc.hw3.components.HeaderComponent;
-import com.epam.tc.hw3.components.LogComponent;
-import com.epam.tc.hw3.components.RadioRowComponent;
+import com.epam.tc.hw6.components.CheckboxRowComponent;
+import com.epam.tc.hw6.components.DropdownListComponent;
+import com.epam.tc.hw6.components.HeaderComponent;
+import com.epam.tc.hw6.components.LogComponent;
+import com.epam.tc.hw6.components.RadioRowComponent;
 import org.openqa.selenium.WebDriver;
 
 public class DifferentElementsPage extends AbstractPage {

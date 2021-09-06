@@ -1,8 +1,8 @@
 package com.epam.tc.hw6.failed;
 
-import com.epam.tc.hw3.components.LeftSectionComponent;
-import com.epam.tc.hw3.pages.FrameButtonPage;
 import com.epam.tc.hw6.HomePageTest;
+import com.epam.tc.hw6.components.LeftSectionComponent;
+import com.epam.tc.hw6.pages.FrameButtonPage;
 import com.epam.tc.hw6.utils.PropertyFileReader;
 import com.epam.tc.hw6.utils.ScreenshotListener;
 import com.epam.tc.hw6.utils.Utils;

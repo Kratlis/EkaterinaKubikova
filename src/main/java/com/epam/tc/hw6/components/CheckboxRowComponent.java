@@ -1,4 +1,4 @@
-package com.epam.tc.hw3.components;
+package com.epam.tc.hw6.components;
 
 import java.util.List;
 import org.openqa.selenium.By;

@@ -1,7 +1,7 @@
-package com.epam.tc.hw3.pages;
+package com.epam.tc.hw6.pages;
 
-import com.epam.tc.hw3.components.HeaderComponent;
-import com.epam.tc.hw3.components.LeftSectionComponent;
+import com.epam.tc.hw6.components.HeaderComponent;
+import com.epam.tc.hw6.components.LeftSectionComponent;
 import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

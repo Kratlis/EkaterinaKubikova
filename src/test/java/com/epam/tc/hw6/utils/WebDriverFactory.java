@@ -1,6 +1,6 @@
 package com.epam.tc.hw6.utils;
 
-import com.epam.tc.hw3.exceptions.WebDriverTypeException;
+import com.epam.tc.hw6.exceptions.WebDriverTypeException;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import java.net.MalformedURLException;
 import java.net.URL;

@@ -1,4 +1,4 @@
-package com.epam.tc.hw3.pages;
+package com.epam.tc.hw6.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
