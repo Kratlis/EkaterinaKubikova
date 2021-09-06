@@ -1,7 +1,7 @@
 package com.epam.tc.hw4.ex1;
 
-import com.epam.tc.hw3.components.LeftSectionComponent;
-import com.epam.tc.hw3.pages.FrameButtonPage;
+import com.epam.tc.hw4.components.LeftSectionComponent;
+import com.epam.tc.hw4.pages.FrameButtonPage;
 import com.epam.tc.hw4.HomePageTest;
 import com.epam.tc.hw4.utils.PropertyFileReader;
 import com.epam.tc.hw4.utils.Utils;
