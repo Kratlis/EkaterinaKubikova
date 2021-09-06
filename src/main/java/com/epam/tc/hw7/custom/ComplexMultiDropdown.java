@@ -1,4 +1,4 @@
-package com.epam.tc.custom;
+package com.epam.tc.hw7.custom;
 
 import static com.epam.jdi.light.driver.WebDriverByUtils.fillByTemplate;
 import static com.epam.jdi.light.elements.init.UIFactory.$;

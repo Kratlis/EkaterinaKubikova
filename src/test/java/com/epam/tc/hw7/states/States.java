@@ -1,14 +1,13 @@
 package com.epam.tc.hw7.states;
 
-import static com.epam.tc.SiteJdi.homePage;
-import static com.epam.tc.SiteJdi.loginForm;
-import static com.epam.tc.SiteJdi.logout;
-import static com.epam.tc.SiteJdi.userIcon;
-import static com.epam.tc.SiteJdi.userName;
+import static com.epam.tc.hw7.SiteJdi.homePage;
+import static com.epam.tc.hw7.SiteJdi.loginForm;
+import static com.epam.tc.hw7.SiteJdi.logout;
+import static com.epam.tc.hw7.SiteJdi.userIcon;
+import static com.epam.tc.hw7.SiteJdi.userName;
 
 import com.epam.jdi.light.elements.composite.WebPage;
-import com.epam.tc.SiteJdi;
-import com.epam.tc.entities.User;
+import com.epam.tc.hw7.entities.User;
 import io.qameta.allure.Step;
 
 /**

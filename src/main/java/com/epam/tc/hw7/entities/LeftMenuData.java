@@ -1,4 +1,4 @@
-package com.epam.tc.entities;
+package com.epam.tc.hw7.entities;
 
 /**
  * Created by Roman_Iovlev on 3/2/2018.

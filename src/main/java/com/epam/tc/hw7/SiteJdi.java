@@ -1,13 +1,13 @@
-package com.epam.tc;
+package com.epam.tc.hw7;
 
 import com.epam.jdi.light.elements.common.UIElement;
 import com.epam.jdi.light.elements.complex.Menu;
 import com.epam.jdi.light.elements.composite.Form;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.Css;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
-import com.epam.tc.entities.User;
-import com.epam.tc.pages.HomePage;
-import com.epam.tc.pages.MetalsColorsPage;
+import com.epam.tc.hw7.entities.User;
+import com.epam.tc.hw7.pages.HomePage;
+import com.epam.tc.hw7.pages.MetalsColorsPage;
 import org.openqa.selenium.WebElement;
 
 //@JSite("https://jdi-testing.github.io/jdi-light/")

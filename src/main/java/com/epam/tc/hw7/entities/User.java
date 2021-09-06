@@ -1,4 +1,4 @@
-package com.epam.tc.entities;
+package com.epam.tc.hw7.entities;
 
 
 import com.epam.jdi.tools.DataClass;

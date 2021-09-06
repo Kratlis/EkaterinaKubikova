@@ -1,6 +1,6 @@
 package com.epam.tc.hw7.utils;
 
-import com.epam.tc.entities.MetalsColorsFormData;
+import com.epam.tc.hw7.entities.MetalsColorsFormData;
 
 public class Utils {
     public static final String JSON_PROPERTY_FILE_PATH = "src/test/resources/metalsColorsDataSet.json";

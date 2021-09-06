@@ -1,4 +1,4 @@
-package com.epam.tc.components;
+package com.epam.tc.hw7.components;
 
 import com.epam.jdi.light.elements.complex.Checklist;
 import com.epam.jdi.light.elements.complex.dropdown.Dropdown;
@@ -7,8 +7,8 @@ import com.epam.jdi.light.elements.pageobjects.annotations.locators.JDropdown;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 import com.epam.jdi.light.ui.html.elements.common.Button;
 import com.epam.jdi.light.ui.html.elements.complex.RadioButtons;
-import com.epam.tc.custom.VegetablesMultiDropdown;
-import com.epam.tc.entities.MetalsColorsFormData;
+import com.epam.tc.hw7.custom.VegetablesMultiDropdown;
+import com.epam.tc.hw7.entities.MetalsColorsFormData;
 
 public class MetalsColorsForm extends Form<MetalsColorsFormData> {
     @UI("[name=custom_radio_odd]")

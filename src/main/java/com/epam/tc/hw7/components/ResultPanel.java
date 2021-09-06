@@ -1,4 +1,4 @@
-package com.epam.tc.components;
+package com.epam.tc.hw7.components;
 
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 

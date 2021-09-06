@@ -1,14 +1,14 @@
 package com.epam.tc.hw7;
 
-import static com.epam.tc.SiteJdi.header;
-import static com.epam.tc.SiteJdi.homePage;
-import static com.epam.tc.SiteJdi.metalsColorsPage;
-import static com.epam.tc.entities.LeftMenuData.MetalsColors;
+import static com.epam.tc.hw7.SiteJdi.header;
+import static com.epam.tc.hw7.SiteJdi.homePage;
+import static com.epam.tc.hw7.SiteJdi.metalsColorsPage;
+import static com.epam.tc.hw7.entities.LeftMenuData.MetalsColors;
 import static com.epam.tc.hw7.states.States.shouldBeLoggedIn;
 import static com.epam.tc.hw7.states.States.shouldBeLoggedOut;
 
-import com.epam.tc.components.LogItem;
-import com.epam.tc.entities.MetalsColorsFormData;
+import com.epam.tc.hw7.components.LogItem;
+import com.epam.tc.hw7.entities.MetalsColorsFormData;
 import com.epam.tc.hw7.testng.TestNGListener;
 import com.epam.tc.hw7.utils.MetalsColorsDataProvider;
 import com.epam.tc.hw7.utils.Utils;

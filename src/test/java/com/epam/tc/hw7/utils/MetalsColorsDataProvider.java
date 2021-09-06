@@ -1,6 +1,6 @@
 package com.epam.tc.hw7.utils;
 
-import com.epam.tc.entities.MetalsColorsFormData;
+import com.epam.tc.hw7.entities.MetalsColorsFormData;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
