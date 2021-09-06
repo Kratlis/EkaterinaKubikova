@@ -1,7 +1,7 @@
 package com.epam.tc.hw5.cucumber.steps;
 
-import com.epam.tc.hw3.components.LogComponent;
-import com.epam.tc.hw3.components.UserTableComponent;
+import com.epam.tc.hw5.components.LogComponent;
+import com.epam.tc.hw5.components.UserTableComponent;
 import com.epam.tc.hw5.cucumber.context.TestContext;
 import com.epam.tc.hw5.utils.ScreenshotListener;
 import io.cucumber.java.en.And;

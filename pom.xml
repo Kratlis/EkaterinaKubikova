@@ -204,16 +204,10 @@
       <properties>
         <testng.suite.file>${testng.hw4.configs.path}/exercise1.suite.xml</testng.suite.file>
       </properties>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
     </profile>
 
     <profile>
       <id>Cucumber</id>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
       <properties>
         <testng.suite.file>${testng.hw5.configs.path}/exercise1.suite.xml</testng.suite.file>
       </properties>

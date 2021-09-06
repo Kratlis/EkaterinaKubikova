@@ -1,8 +1,8 @@
 package com.epam.tc.hw5.cucumber.steps;
 
-import com.epam.tc.hw3.components.ServiceMenuComponent;
-import com.epam.tc.hw3.pages.UnauthorizedHomePage;
+import com.epam.tc.hw5.components.ServiceMenuComponent;
 import com.epam.tc.hw5.cucumber.context.TestContext;
+import com.epam.tc.hw5.pages.UnauthorizedHomePage;
 import com.epam.tc.hw5.utils.PropertyFileReader;
 import com.epam.tc.hw5.utils.Utils;
 import io.cucumber.java.en.And;
