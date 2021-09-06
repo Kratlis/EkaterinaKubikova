@@ -6,7 +6,7 @@ Feature: User Table page contains information about users
   User - username of the user.
   Description - additional information: image, description text, vip status.
 
-  Scenario Outline: User Table Page test
+  Scenario Outline: Numbers, usernames and descriptions on User Table Page test
 
     Given I open JDI GitHub site
     And I login as user "Roman Iovlev"
@@ -31,7 +31,7 @@ Feature: User Table page contains information about users
       | 6      | Giovanni Rovelli | Hulksome description             |
 
 
-  Scenario Outline: User Table Page test
+  Scenario Outline: Droplist values on User Table Page test
 
     Given I open JDI GitHub site
     And I login as user "Roman Iovlev"
