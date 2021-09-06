@@ -1,9 +1,9 @@
 package com.epam.tc.hw4.ex2;
 
+import com.epam.tc.hw4.HomePageTest;
 import com.epam.tc.hw4.components.CheckboxRowComponent;
 import com.epam.tc.hw4.components.LogComponent;
 import com.epam.tc.hw4.pages.DifferentElementsPage;
-import com.epam.tc.hw4.HomePageTest;
 import com.epam.tc.hw4.utils.PropertyFileReader;
 import com.epam.tc.hw4.utils.Utils;
 import io.qameta.allure.Description;
