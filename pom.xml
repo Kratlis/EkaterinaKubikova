@@ -19,12 +19,14 @@
     <assertj-core.version>3.20.2</assertj-core.version>
     <calculator.version>1.0</calculator.version>
     <checkstyle.version>8.42</checkstyle.version>
+    <cucumber.version>6.11.0</cucumber.version>
     <logback-classic.version>1.2.5</logback-classic.version>
     <lombok.version>1.18.20</lombok.version>
     <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
     <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
     <selenium-java.version>3.141.59</selenium-java.version>
-    <testng.version>6.14.3</testng.version>
+    <testng.old.version>6.14.3</testng.old.version>
+    <testng.version>7.4.0</testng.version>
     <wdm.version>4.4.3</wdm.version>
 
     <test.resources.dir>${project.build.testSourceDirectory}/../resources</test.resources.dir>
@@ -33,6 +35,8 @@
     <testng.hw2.configs.path>${test.resources.dir}/testng/hw2</testng.hw2.configs.path>
     <testng.hw3.configs.path>${test.resources.dir}/testng/hw3</testng.hw3.configs.path>
     <testng.hw4.configs.path>${test.resources.dir}/testng/hw4</testng.hw4.configs.path>
+    <testng.hw5.configs.path>${test.resources.dir}/testng/hw5</testng.hw5.configs.path>
+    <testng.hw6.configs.path>${test.resources.dir}/testng/hw6</testng.hw6.configs.path>
     <testng.hw7.configs.path>${test.resources.dir}/testng/hw7</testng.hw7.configs.path>
     <testng.suite.file>${testng.hw1.configs.path}/suiteAll.xml</testng.suite.file>
     <jdi-light-html.version>1.3.14</jdi-light-html.version>
@@ -138,6 +142,22 @@
     </dependency>
 
     <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-testng</artifactId>
+      <version>${cucumber.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>${cucumber.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-cucumber6-jvm</artifactId>
+      <version>${allure.version}</version>
+    </dependency>
+
+    <dependency>
       <groupId>com.epam.jdi</groupId>
       <artifactId>jdi-light-html</artifactId>
       <version>${jdi-light-html.version}</version>
@@ -146,6 +166,12 @@
       <groupId>com.google.code.gson</groupId>
       <artifactId>gson</artifactId>
       <version>${gson.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>testng</artifactId>
+      <groupId>org.testng</groupId>
+      <version>${testng.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -199,6 +225,20 @@
       <id>Allure</id>
       <properties>
         <testng.suite.file>${testng.hw4.configs.path}/exercise1.suite.xml</testng.suite.file>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>Cucumber</id>
+      <properties>
+        <testng.suite.file>${testng.hw5.configs.path}/exercise1.suite.xml</testng.suite.file>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>Selenium Grid</id>
+      <properties>
+        <testng.suite.file>${testng.hw6.configs.path}/exercise1.suite.xml</testng.suite.file>
       </properties>
     </profile>
 
