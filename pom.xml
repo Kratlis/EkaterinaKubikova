@@ -182,7 +182,7 @@
     </profile>
 
     <profile>
-      <id>Steps</id>
+      <id>Allure</id>
       <properties>
         <testng.suite.file>${testng.hw4.configs.path}/exercise1.suite.xml</testng.suite.file>
       </properties>
