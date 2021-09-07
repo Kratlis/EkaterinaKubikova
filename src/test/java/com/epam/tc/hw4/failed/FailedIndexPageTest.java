@@ -1,11 +1,11 @@
-package com.epam.tc.hw6.failed;
+package com.epam.tc.hw4.failed;
 
-import com.epam.tc.hw6.HomePageTest;
-import com.epam.tc.hw6.components.LeftSectionComponent;
-import com.epam.tc.hw6.pages.FrameButtonPage;
-import com.epam.tc.hw6.utils.PropertyFileReader;
-import com.epam.tc.hw6.utils.ScreenshotListener;
-import com.epam.tc.hw6.utils.Utils;
+import com.epam.tc.hw4.HomePageTest;
+import com.epam.tc.hw4.components.LeftSectionComponent;
+import com.epam.tc.hw4.pages.FrameButtonPage;
+import com.epam.tc.hw4.utils.PropertyFileReader;
+import com.epam.tc.hw4.utils.ScreenshotListener;
+import com.epam.tc.hw4.utils.Utils;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;

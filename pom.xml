@@ -19,6 +19,7 @@
     <assertj-core.version>3.20.2</assertj-core.version>
     <calculator.version>1.0</calculator.version>
     <checkstyle.version>8.42</checkstyle.version>
+    <cucumber.version>6.11.0</cucumber.version>
     <logback-classic.version>1.2.5</logback-classic.version>
     <lombok.version>1.18.20</lombok.version>
     <maven-checkstyle-plugin.version>3.1.2</maven-checkstyle-plugin.version>
@@ -33,6 +34,8 @@
     <testng.hw2.configs.path>${test.resources.dir}/testng/hw2</testng.hw2.configs.path>
     <testng.hw3.configs.path>${test.resources.dir}/testng/hw3</testng.hw3.configs.path>
     <testng.hw4.configs.path>${test.resources.dir}/testng/hw4</testng.hw4.configs.path>
+    <testng.hw5.configs.path>${test.resources.dir}/testng/hw5</testng.hw5.configs.path>
+    <testng.hw6.configs.path>${test.resources.dir}/testng/hw6</testng.hw6.configs.path>
     <testng.suite.file>${testng.hw1.configs.path}/suiteAll.xml</testng.suite.file>
   </properties>
 
@@ -133,6 +136,21 @@
       <scope>test</scope>
     </dependency>
 
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-testng</artifactId>
+      <version>${cucumber.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>${cucumber.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.qameta.allure</groupId>
+      <artifactId>allure-cucumber6-jvm</artifactId>
+      <version>${allure.version}</version>
+    </dependency>
   </dependencies>
 
   <profiles>
@@ -186,9 +204,20 @@
       <properties>
         <testng.suite.file>${testng.hw4.configs.path}/exercise1.suite.xml</testng.suite.file>
       </properties>
-      <activation>
-        <activeByDefault>true</activeByDefault>
-      </activation>
+    </profile>
+
+    <profile>
+      <id>Cucumber</id>
+      <properties>
+        <testng.suite.file>${testng.hw5.configs.path}/exercise1.suite.xml</testng.suite.file>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>Selenium Grid</id>
+      <properties>
+        <testng.suite.file>${testng.hw6.configs.path}/exercise1.suite.xml</testng.suite.file>
+      </properties>
     </profile>
   </profiles>
 
