@@ -35,6 +35,7 @@
     <testng.hw3.configs.path>${test.resources.dir}/testng/hw3</testng.hw3.configs.path>
     <testng.hw4.configs.path>${test.resources.dir}/testng/hw4</testng.hw4.configs.path>
     <testng.hw5.configs.path>${test.resources.dir}/testng/hw5</testng.hw5.configs.path>
+    <testng.hw6.configs.path>${test.resources.dir}/testng/hw6</testng.hw6.configs.path>
     <testng.suite.file>${testng.hw1.configs.path}/suiteAll.xml</testng.suite.file>
   </properties>
 
@@ -210,6 +211,13 @@
       <id>Cucumber</id>
       <properties>
         <testng.suite.file>${testng.hw5.configs.path}/exercise1.suite.xml</testng.suite.file>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>Selenium Grid</id>
+      <properties>
+        <testng.suite.file>${testng.hw6.configs.path}/exercise1.suite.xml</testng.suite.file>
       </properties>
     </profile>
   </profiles>

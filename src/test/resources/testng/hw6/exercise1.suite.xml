@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Exercises" verbose="1">
+  <listeners>
+    <listener class-name="com.epam.tc.hw6.utils.ScreenshotListener"/>
+  </listeners>
+  <test name="Home Page Test">
+    <classes>
+      <class name="com.epam.tc.hw6.ex1.IndexPageTest"/>
+    </classes>
+  </test>
+
+  <test name="Different Elements Page Test">
+    <classes>
+      <class name="com.epam.tc.hw6.ex2.DifferentElementsPageTest"/>
+    </classes>
+  </test>
+</suite>
