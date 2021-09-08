@@ -79,6 +79,7 @@
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
           <argLine>
+            --illegal-access=permit
             -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
           </argLine>
           <suiteXmlFiles>
