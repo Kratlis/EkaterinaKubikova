@@ -102,34 +102,9 @@
 
   <dependencies>
     <dependency>
-      <artifactId>calculator</artifactId>
-      <groupId>calculator</groupId>
-      <version>${calculator.version}</version>
-      <scope>system</scope>
-      <systemPath>${calculator.file}</systemPath>
-    </dependency>
-    <dependency>
-      <artifactId>testng</artifactId>
-      <groupId>org.testng</groupId>
-      <version>${testng.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <artifactId>assertj-core</artifactId>
       <groupId>org.assertj</groupId>
       <version>${assertj-core.version}</version>
-      <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <artifactId>selenium-java</artifactId>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <version>${selenium-java.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.github.bonigarcia</groupId>
-      <artifactId>webdrivermanager</artifactId>
-      <version>${wdm.version}</version>
       <scope>test</scope>
     </dependency>
 
@@ -138,22 +113,6 @@
       <artifactId>allure-testng</artifactId>
       <version>${allure.version}</version>
       <scope>test</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-testng</artifactId>
-      <version>${cucumber.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-java</artifactId>
-      <version>${cucumber.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.qameta.allure</groupId>
-      <artifactId>allure-cucumber6-jvm</artifactId>
-      <version>${allure.version}</version>
     </dependency>
 
     <dependency>
@@ -169,72 +128,6 @@
   </dependencies>
 
   <profiles>
-    <profile>
-      <id>Calculator All</id>
-      <properties>
-        <testng.suite.file>${testng.hw1.configs.path}/suiteAll.xml</testng.suite.file>
-      </properties>
-    </profile>
-    <profile>
-      <id>Calculator SumAndSubtract</id>
-      <properties>
-        <testng.suite.file>${testng.hw1.configs.path}/suiteSumSubtract.xml</testng.suite.file>
-      </properties>
-    </profile>
-    <profile>
-      <id>Calculator MultiplyAndDivide</id>
-      <properties>
-        <testng.suite.file>${testng.hw1.configs.path}/suiteMultiplyDivide.xml</testng.suite.file>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>Selenium Exercise 1</id>
-      <properties>
-        <testng.suite.file>${testng.hw2.configs.path}/exercise1.suite.xml</testng.suite.file>
-      </properties>
-    </profile>
-    <profile>
-      <id>Selenium Exercise 2</id>
-      <properties>
-        <testng.suite.file>${testng.hw2.configs.path}/exercise2.suite.xml</testng.suite.file>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>Page Object Exercise 1</id>
-      <properties>
-        <testng.suite.file>${testng.hw3.configs.path}/exercise1.suite.xml</testng.suite.file>
-      </properties>
-    </profile>
-    <profile>
-      <id>Page Object Exercise 2</id>
-      <properties>
-        <testng.suite.file>${testng.hw3.configs.path}/exercise2.suite.xml</testng.suite.file>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>Allure</id>
-      <properties>
-        <testng.suite.file>${testng.hw4.configs.path}/exercise1.suite.xml</testng.suite.file>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>Cucumber</id>
-      <properties>
-        <testng.suite.file>${testng.hw5.configs.path}/exercise1.suite.xml</testng.suite.file>
-      </properties>
-    </profile>
-
-    <profile>
-      <id>Selenium Grid</id>
-      <properties>
-        <testng.suite.file>${testng.hw6.configs.path}/exercise1.suite.xml</testng.suite.file>
-      </properties>
-    </profile>
-
     <profile>
       <id>JDI</id>
       <properties>
