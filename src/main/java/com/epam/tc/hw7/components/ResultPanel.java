@@ -1,21 +1,22 @@
 package com.epam.tc.hw7.components;
 
+import com.epam.jdi.light.elements.common.UIElement;
 import com.epam.jdi.light.elements.pageobjects.annotations.locators.UI;
 
 public class ResultPanel {
 
     @UI(".summ-res")
-    public ResultRow summary;
+    public UIElement summary;
 
     @UI(".elem-res")
-    public ResultRow elements;
+    public UIElement elements;
 
     @UI(".col-res")
-    public ResultRow color;
+    public UIElement color;
 
     @UI(".met-res")
-    public ResultRow metal;
+    public UIElement metal;
 
     @UI(".sal-res")
-    public ResultRow vegetables;
+    public UIElement vegetables;
 }
