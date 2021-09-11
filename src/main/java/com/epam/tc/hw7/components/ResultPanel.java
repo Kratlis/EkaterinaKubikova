@@ -19,4 +19,17 @@ public class ResultPanel {
 
     @UI(".sal-res")
     public UIElement vegetables;
+
+    @Override
+    public String toString() {
+        return summary.text()
+            + "\n"
+            + elements.text()
+            + "\n"
+            + color.text()
+            + "\n"
+            + metal.text()
+            + "\n"
+            + vegetables.text();
+    }
 }

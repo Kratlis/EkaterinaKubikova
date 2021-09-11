@@ -11,6 +11,7 @@ import org.testng.annotations.Listeners;
 
 @Listeners(TestNGListener.class)
 public interface TestsInit {
+
     @BeforeSuite(alwaysRun = true)
     static void setUp() {
         initSite(SiteJdi.class);
