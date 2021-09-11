@@ -11,10 +11,10 @@ public class VegetablesMultiDropdown {
 
     @FindBy(css = "#vegetables .caret")
     WebElement weatherExpand;
+
     @FindBy(css = "#vegetables li")
     List<WebElement> weatherList;
-    @FindBy(css = "#vegetables button")
-    WebElement weatherValue;
+
     @FindBy(css = "#vegetables ul")
     WebElement weatherIsExpanded;
 
