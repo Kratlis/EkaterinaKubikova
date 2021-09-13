@@ -11,6 +11,7 @@ import com.epam.tc.hw7.custom.VegetablesMultiDropdown;
 import com.epam.tc.hw7.entities.MetalsColorsFormData;
 
 public class MetalsColorsForm extends Form<MetalsColorsFormData> {
+
     @UI("[name=custom_radio_odd]")
     RadioButtons summaryOdd;
 

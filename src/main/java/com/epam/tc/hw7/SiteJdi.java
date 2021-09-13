@@ -11,7 +11,9 @@ import com.epam.tc.hw7.pages.MetalsColorsPage;
 import org.openqa.selenium.WebElement;
 
 public class SiteJdi {
+
     public static HomePage homePage;
+
     public static MetalsColorsPage metalsColorsPage;
 
     @Css("form")
