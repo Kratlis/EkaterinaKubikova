@@ -149,7 +149,7 @@
 </soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://speller.yandex.net/services/spellservice/checkTexts"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="014eaa44-fc3a-4631-8748-d16bc7fd88e0" name="CorrectTestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="fb3558d8-6f92-412d-accf-c9303e9fc88c" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="LowercaseCheckTextTestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="request" name="Correct Request" id="b2417dc6-2f2d-4876-ac01-45808d390cf2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SpellServiceSoap</con:interface><con:operation>checkText</con:operation><con:request name="Correct Request" id="001e584a-cb82-49c1-9625-177e16577570"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="discardResponse">true</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
-      <spel:CheckTextRequest lang="en">\r
+      <spel:CheckTextRequest lang="${#TestSuite#lang}">\r
          <spel:text>${#TestCase#word}</spel:text>\r
       </spel:CheckTextRequest>\r
    </soapenv:Body>\r
@@ -186,7 +186,7 @@
   testRunner.runTestStepByName("Correct Texts Request")</script></con:config></con:testStep><con:testStep type="request" name="Correct Texts Request" id="9c995683-489d-4ab4-8438-ba9a63ec8ad1" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SpellServiceSoap</con:interface><con:operation>checkTexts</con:operation><con:request name="Correct Texts Request" id="cf0c42e7-eff7-483d-8354-8bf1b0e3d31d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="discardResponse">true</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
-     <spel:CheckTextsRequest lang="${#TestCase#lang}" options="0" format="">
+     <spel:CheckTextsRequest lang="${#TestSuite#lang}" options="0" format="">
          <spel:text>${#TestCase#word1}</spel:text>
          <spel:text>${#TestCase#word2}</spel:text>
          <spel:text>${#TestCase#word3}</spel:text>
@@ -228,7 +228,7 @@
   }</script></con:config></con:testStep><con:testStep type="request" name="Mistake Request" id="54d22526-7105-4a09-8db5-4b77882a4057" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SpellServiceSoap</con:interface><con:operation>checkText</con:operation><con:request name="Mistake Request" id="001e584a-cb82-49c1-9625-177e16577570"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="discardResponse">true</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
-      <spel:CheckTextRequest>\r
+      <spel:CheckTextRequest lang="${#TestSuite#lang}">\r
          <spel:text>${#TestCase#word}</spel:text>\r
       </spel:CheckTextRequest>\r
    </soapenv:Body>\r
@@ -262,7 +262,7 @@
   }</script></con:config></con:testStep><con:testStep type="request" name="Mistake Request" id="cfb471a9-338b-43f6-b3b1-fc7501d62712" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SpellServiceSoap</con:interface><con:operation>checkText</con:operation><con:request name="Mistake Request" id="001e584a-cb82-49c1-9625-177e16577570"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="discardResponse">true</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
-      <spel:CheckTextRequest>\r
+      <spel:CheckTextRequest lang="${#TestSuite#lang}">\r
          <spel:text>${#TestCase#word}</spel:text>\r
       </spel:CheckTextRequest>\r
    </soapenv:Body>\r
@@ -276,7 +276,7 @@
   </error>
 </SpellResult>]]></content><allowWildcards>true</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:setupScript>testRunner.testCase.setPropertyValue("word", "")
   testRunner.testCase.setPropertyValue("correct", "")</con:setupScript><con:tearDownScript>testRunner.testCase.setPropertyValue("word", "")
-  testRunner.testCase.setPropertyValue("correct", "")</con:tearDownScript><con:properties><con:property><con:name>word</con:name><con:value>atm</con:value></con:property><con:property><con:name>correct</con:name><con:value>ATM</con:value></con:property></con:properties></con:testCase><con:testCase id="c1402b7c-a7a1-4a90-b443-1419cfde1bd2" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="MistakeCheckTextsTestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="groovy" name="read properties" id="23f47128-1dbb-425f-ac79-aa69bf6f300b"><con:settings/><con:config><script>def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
+  testRunner.testCase.setPropertyValue("correct", "")</con:tearDownScript><con:properties><con:property><con:name>word</con:name><con:value/></con:property><con:property><con:name>correct</con:name><con:value/></con:property></con:properties></con:testCase><con:testCase id="c1402b7c-a7a1-4a90-b443-1419cfde1bd2" failOnError="false" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="MistakeCheckTextsTestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="groovy" name="read properties" id="23f47128-1dbb-425f-ac79-aa69bf6f300b"><con:settings/><con:config><script>def groovyUtils = new com.eviware.soapui.support.GroovyUtils(context)
   def projectPath = groovyUtils.projectPath
   def filePath = projectPath + "/test.properties"
 
@@ -296,7 +296,7 @@
   testRunner.runTestStepByName("Mistake Texts Request")</script></con:config></con:testStep><con:testStep type="request" name="Mistake Texts Request" id="6f655c11-5eb9-4cd3-98da-ba8de333344e" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SpellServiceSoap</con:interface><con:operation>checkTexts</con:operation><con:request name="Mistake Texts Request" id="cf0c42e7-eff7-483d-8354-8bf1b0e3d31d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="discardResponse">true</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
-     <spel:CheckTextsRequest lang="${#TestCase#lang}" options="0" format="">
+     <spel:CheckTextsRequest lang="${#TestSuite#lang}" options="0" format="">
          <spel:text>${#TestCase#word1}</spel:text>
          <spel:text>${#TestCase#word2}</spel:text>
          <spel:text>${#TestCase#word3}</spel:text>
@@ -361,7 +361,7 @@
   }</script></con:config></con:testStep><con:testStep type="request" name="Nonexistant Request" id="28d56dd8-c4c9-435f-9eab-8888bbae1693" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SpellServiceSoap</con:interface><con:operation>checkText</con:operation><con:request name="Nonexistant Request" id="001e584a-cb82-49c1-9625-177e16577570"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="discardResponse">true</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
-      <spel:CheckTextRequest>\r
+      <spel:CheckTextRequest lang="${#TestSuite#lang}">\r
          <spel:text>${#TestCase#word}</spel:text>\r
       </spel:CheckTextRequest>\r
    </soapenv:Body>\r
@@ -390,7 +390,7 @@
   testRunner.runTestStepByName("Nonexistant Texts Request")</script></con:config></con:testStep><con:testStep type="request" name="Nonexistant Texts Request" id="66772c7f-20f2-4f0d-bd45-30de92e3d94c" disabled="true"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>SpellServiceSoap</con:interface><con:operation>checkTexts</con:operation><con:request name="Nonexistant Texts Request" id="cf0c42e7-eff7-483d-8354-8bf1b0e3d31d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting><con:setting id="discardResponse">true</con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://speller.yandex.net/services/spellservice</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:spel="http://speller.yandex.net/services/spellservice">\r
    <soapenv:Header/>\r
    <soapenv:Body>\r
-     <spel:CheckTextsRequest lang="${#TestCase#lang}" options="0" format="">
+     <spel:CheckTextsRequest lang="${#TestSuite#lang}" options="0" format="">
          <spel:text>${#TestCase#word1}</spel:text>
          <spel:text>${#TestCase#word2}</spel:text>
          <spel:text>${#TestCase#word3}</spel:text>
