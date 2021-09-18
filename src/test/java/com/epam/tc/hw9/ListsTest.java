@@ -83,7 +83,7 @@ public class ListsTest {
     }
 
     @Test
-    public void doubleDeleteList() {
+    public void moveDeletedList() {
         SoftAssertions softAssertions = new SoftAssertions();
 
         String listId = listsService.createList(DefaultObjectCreator.createList().withIdBoard(board.getId()))
