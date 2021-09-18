@@ -91,9 +91,10 @@ public class ListsTest {
 
         String response = listsService.deleteList(listId);
         checkDeleted(response);
-
-        softAssertions.assertThatThrownBy(() -> listsService.deleteList(listId))
-                      .isInstanceOf(AssertionError.class);
+        String boardId = RestBoardsService.getInstance()
+                                          .createBoard(DefaultObjectCreator.createBoard()).getId();
+        softAssertions.assertThat(listsService.moveListToBoard(listId, boardId).statusCode())
+            .isEqualTo(HttpStatusCodes.STATUS_CODE_NOT_FOUND);
         softAssertions.assertAll();
     }
 
