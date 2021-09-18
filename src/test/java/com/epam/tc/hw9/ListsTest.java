@@ -6,6 +6,7 @@ import com.epam.tc.hw9.service.RestListsService;
 import com.epam.tc.hw9.utils.DefaultObjectCreator;
 import com.example.types.BoardDto;
 import com.example.types.ListDto;
+import com.google.api.client.http.HttpStatusCodes;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -69,7 +70,8 @@ public class ListsTest {
 
             new RestListAssertions(createdList)
                 .verifyListName(listForCreation.getName())
-                .verifyListId(createdListId);
+                .verifyListId(createdListId)
+                .verifyBoardName(boardName);
         }
     }
 

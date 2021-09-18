@@ -1,5 +1,6 @@
 package com.epam.tc.hw9.assertions;
 
+import com.epam.tc.hw9.service.RestBoardsService;
 import com.example.types.ListDto;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.api.SoftAssertions;
@@ -29,6 +30,18 @@ public class RestListAssertions {
         Assertions.assertThat(list.getId())
                   .as("List has id : " + id)
                   .isEqualTo(id);
+
+        softAssertions.assertAll();
+        return this;
+    }
+
+    public RestListAssertions verifyBoardName(String expectedBoardName) {
+        SoftAssertions softAssertions = new SoftAssertions();
+        String boardName = RestBoardsService.getInstance().getBoard(list.getIdBoard()).getName();
+
+        softAssertions.assertThat(boardName)
+                  .as("List is on the board with name : " + expectedBoardName)
+                  .isEqualTo(expectedBoardName);
 
         softAssertions.assertAll();
         return this;
