@@ -12,6 +12,17 @@ import lombok.SneakyThrows;
 
 public class RestBoardsService extends CommonService {
 
+    private static RestBoardsService restBoardsService;
+
+    private RestBoardsService() {}
+
+    public static RestBoardsService getInstance() {
+        if (restBoardsService == null) {
+            restBoardsService = new RestBoardsService();
+        }
+        return restBoardsService;
+    }
+
     @SneakyThrows
     public BoardDto createBoard(BoardDto board) {
         HashMap<String, String> boardParameters = new HashMap<>();

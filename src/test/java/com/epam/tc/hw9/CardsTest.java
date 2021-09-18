@@ -22,10 +22,10 @@ public class CardsTest {
 
     @BeforeMethod
     public void createBoardAndList() {
-        restCardService = new RestCardService();
-        BoardDto board = new RestBoardsService()
+        restCardService = RestCardService.getInstance();
+        BoardDto board = RestBoardsService.getInstance()
             .createBoard(DefaultObjectCreator.createBoard());
-        list = new RestListsService()
+        list = RestListsService.getInstance()
             .createList(DefaultObjectCreator.createList().withIdBoard(board.getId()));
     }
 

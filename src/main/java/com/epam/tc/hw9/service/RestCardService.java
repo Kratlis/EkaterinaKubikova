@@ -8,6 +8,17 @@ import java.util.HashMap;
 
 public class RestCardService {
 
+    private static RestCardService restCardService;
+
+    private RestCardService() {}
+
+    public static RestCardService getInstance() {
+        if (restCardService == null) {
+            restCardService = new RestCardService();
+        }
+        return restCardService;
+    }
+
     public CardDto createCard(CardDto card) {
         HashMap<String, String> parameters = new HashMap<>();
         parameters.put("idList", card.getIdList());

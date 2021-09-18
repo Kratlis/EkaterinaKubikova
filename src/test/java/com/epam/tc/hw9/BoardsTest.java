@@ -20,7 +20,7 @@ public class BoardsTest {
 
     @BeforeMethod(description = "RestBoardsService initialization.")
     public void setup() {
-        restBoardsService = new RestBoardsService();
+        restBoardsService = RestBoardsService.getInstance();
     }
 
     @AfterMethod(description = "Deleting all boards.")

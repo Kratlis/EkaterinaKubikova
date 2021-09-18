@@ -34,7 +34,8 @@ public class RestBoardAssertions {
 
     public RestBoardAssertions verifyLabels(LabelDto... labels) {
         SoftAssertions softAssertions = new SoftAssertions();
-        List<LabelDto> labelsOnBoard = new RestBoardsService().getLabels(board.getId());
+        List<LabelDto> labelsOnBoard = RestBoardsService.getInstance()
+                                                        .getLabels(board.getId());
         for (int i = 0; i < labelsOnBoard.size(); i++) {
             softAssertions.assertThat(labelsOnBoard.get(i).getName())
                           .isEqualTo(labels[i].getName());

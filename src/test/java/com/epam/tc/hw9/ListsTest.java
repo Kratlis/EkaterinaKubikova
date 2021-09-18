@@ -24,8 +24,8 @@ public class ListsTest {
 
     @BeforeMethod
     public void init() {
-        boardsService = new RestBoardsService();
-        listsService = new RestListsService();
+        boardsService = RestBoardsService.getInstance();
+        listsService = RestListsService.getInstance();
         board = boardsService
             .createBoard(DefaultObjectCreator.createBoard());
     }

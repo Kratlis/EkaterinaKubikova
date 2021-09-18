@@ -12,6 +12,18 @@ import org.hamcrest.Matchers;
 
 public class RestListsService extends CommonService {
 
+    private static RestListsService restListsService;
+
+    private RestListsService() {
+    }
+
+    public static RestListsService getInstance() {
+        if (restListsService == null) {
+            restListsService = new RestListsService();
+        }
+        return restListsService;
+    }
+
     public ListDto createList(ListDto list) {
         HashMap<String, String> parameters = new HashMap<>();
         parameters.put("name", list.getName());
@@ -40,8 +52,8 @@ public class RestListsService extends CommonService {
     }
 
     public String deleteList(String listId) throws JsonSyntaxException {
-        String boardId = new RestBoardsService()
-            .createBoard(DefaultObjectCreator.createBoard()).getId();
+        String boardId = RestBoardsService.getInstance()
+                                          .createBoard(DefaultObjectCreator.createBoard()).getId();
 
         Response response = moveListToBoard(listId, boardId);
         response.then()
