@@ -11,6 +11,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import java.util.Arrays;
+import org.assertj.core.api.Assertions;
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -70,13 +71,12 @@ public class ListsTest {
 
     @Test
     public void deleteBoardWithList() {
-        SoftAssertions softAssertions = new SoftAssertions();
 
         String listId = listsService.createList(DefaultObjectCreator.createList().withIdBoard(board.getId()))
                                     .getId();
 
         String response = boardsService.deleteBoard(board.getId());
-        checkDeleted(response, softAssertions);
+        checkDeleted(response);
 
         Assertions.assertThat(listsService.getNonexistentList(listId).statusCode())
                   .isEqualTo(HttpStatusCodes.STATUS_CODE_NOT_FOUND);
@@ -90,17 +90,17 @@ public class ListsTest {
                                     .getId();
 
         String response = listsService.deleteList(listId);
-        checkDeleted(response, softAssertions);
+        checkDeleted(response);
 
         softAssertions.assertThatThrownBy(() -> listsService.deleteList(listId))
                       .isInstanceOf(AssertionError.class);
         softAssertions.assertAll();
     }
 
-    private void checkDeleted(String response, SoftAssertions softAssertions) {
+    private void checkDeleted(String response) {
         JsonElement value = new Gson().fromJson(response, JsonObject.class).get("_value");
-        softAssertions.assertThat(value.isJsonNull())
-                      .isTrue();
+        Assertions.assertThat(value.isJsonNull())
+                  .isTrue();
     }
 
     @AfterMethod

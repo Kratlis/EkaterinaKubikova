@@ -9,6 +9,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import java.util.Arrays;
+import org.assertj.core.api.Assertions;
 import org.assertj.core.api.SoftAssertions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -46,7 +47,7 @@ public class BoardsTest {
                                           .getId();
 
         String response = restBoardsService.deleteBoard(boardId);
-        checkDeleted(response, softAssertions);
+        checkDeleted(response);
 
         response = restBoardsService.deleteBoard(boardId);
         softAssertions.assertThat(response)
@@ -68,10 +69,10 @@ public class BoardsTest {
             .verifyLabels(labels);
     }
 
-    private void checkDeleted(String response, SoftAssertions softAssertions) {
+    private void checkDeleted(String response) {
         JsonElement value = new Gson().fromJson(response, JsonObject.class).get("_value");
-        softAssertions.assertThat(value.isJsonNull())
-                      .isTrue();
+        Assertions.assertThat(value.isJsonNull())
+                  .isTrue();
     }
 
     @AfterMethod(description = "Deleting all boards.")

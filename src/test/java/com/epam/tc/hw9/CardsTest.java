@@ -9,7 +9,7 @@ import com.example.types.BoardDto;
 import com.example.types.CardDto;
 import com.example.types.ListDto;
 import java.util.Arrays;
-import org.assertj.core.api.SoftAssertions;
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -44,8 +44,6 @@ public class CardsTest {
 
     @Test
     public void deleteCard() {
-        SoftAssertions softAssertions = new SoftAssertions();
-
         String cardId = restCardService
             .createCard(DefaultObjectCreator.createCard().withIdList(list.getId()))
             .getId();
@@ -53,9 +51,8 @@ public class CardsTest {
         restCardService.deleteCard(cardId);
 
         String response = restCardService.deleteCard(cardId);
-        softAssertions.assertThat(response)
-                      .isEqualTo("The requested resource was not found.");
-        softAssertions.assertAll();
+        Assertions.assertThat(response)
+                  .isEqualTo("The requested resource was not found.");
     }
 
     @AfterMethod
