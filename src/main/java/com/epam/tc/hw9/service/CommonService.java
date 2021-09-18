@@ -11,22 +11,17 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import java.util.HashMap;
 import java.util.Map.Entry;
-import java.util.Properties;
 import org.hamcrest.Matchers;
 
 public class CommonService {
-    private static final String PROPERTY_FILE = "src/test/resources/hw9_api/test.properties";
     private final RequestSpecification requestSpecification;
-    Properties properties;
 
     public CommonService() {
-        properties = PropertyFileReader.init(PROPERTY_FILE);
-
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
         requestSpecification = new RequestSpecBuilder()
             .setBaseUri(URI.BASE_URL)
-            .addQueryParam("key", properties.getProperty("key"))
-            .addQueryParam("token", properties.getProperty("token"))
+            .addQueryParam("key", InitProperties.AUTH_KEY)
+            .addQueryParam("token", InitProperties.AUTH_TOKEN)
             .build();
     }
 
