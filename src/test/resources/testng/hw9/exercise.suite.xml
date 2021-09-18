@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Trello Test" verbose="1">
+  <test name="Boards Test">
+    <classes>
+      <class name="com.epam.tc.hw9.BoardsTest"/>
+    </classes>
+  </test>
+
+  <test name="Lists Test">
+    <classes>
+      <class name="com.epam.tc.hw9.ListsTest"/>
+    </classes>
+  </test>
+
+  <test name="Cards Test">
+    <classes>
+      <class name="com.epam.tc.hw9.CardsTest"/>
+    </classes>
+  </test>
+</suite>
