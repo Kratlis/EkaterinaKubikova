@@ -7,14 +7,14 @@ import com.example.types.ListDto;
 public class DefaultObjectCreator {
 
     public static BoardDto createBoard() {
-        return new BoardDto().withName("DEFAULT_BOARD");
+        return new BoardDto().withName(DefaultNames.DEFAULT_BOARD.name());
     }
 
     public static ListDto createList() {
-        return new ListDto().withName("DEFAULT_LIST");
+        return new ListDto().withName(DefaultNames.DEFAULT_LIST.name());
     }
 
     public static CardDto createCard() {
-        return new CardDto().withName("DEFAULT_CARD");
+        return new CardDto().withName(DefaultNames.DEFAULT_CARD.name());
     }
 }
