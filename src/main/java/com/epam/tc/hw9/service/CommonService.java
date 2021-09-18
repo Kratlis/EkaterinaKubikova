@@ -7,6 +7,8 @@ import com.epam.tc.hw9.utils.URI;
 import com.google.api.client.http.HttpStatusCodes;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.filter.log.RequestLoggingFilter;
+import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import java.util.HashMap;
@@ -22,6 +24,8 @@ public class CommonService {
             .setBaseUri(URI.BASE_URL)
             .addQueryParam("key", InitProperties.AUTH_KEY)
             .addQueryParam("token", InitProperties.AUTH_TOKEN)
+            .addFilter(new RequestLoggingFilter())
+            .addFilter(new ResponseLoggingFilter())
             .build();
     }
 
