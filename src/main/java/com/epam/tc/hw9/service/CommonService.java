@@ -2,7 +2,7 @@ package com.epam.tc.hw9.service;
 
 import static io.restassured.RestAssured.given;
 
-import com.epam.tc.hw9.utils.PropertyFileReader;
+import com.epam.tc.hw9.InitProperties;
 import com.epam.tc.hw9.utils.URI;
 import com.google.api.client.http.HttpStatusCodes;
 import io.restassured.RestAssured;
@@ -29,6 +29,13 @@ public class CommonService {
         Response response = given(requestSpecification).get(uri);
         response.then()
                 .statusCode(Matchers.equalTo(HttpStatusCodes.STATUS_CODE_OK));
+        return response;
+    }
+
+    public Response getWithError(String uri) {
+        Response response = given(requestSpecification).get(uri);
+        response.then()
+                .statusCode(Matchers.greaterThanOrEqualTo(HttpStatusCodes.STATUS_CODE_BAD_REQUEST));
         return response;
     }
 

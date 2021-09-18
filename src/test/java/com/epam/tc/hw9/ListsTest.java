@@ -78,9 +78,8 @@ public class ListsTest {
         String response = boardsService.deleteBoard(board.getId());
         checkDeleted(response, softAssertions);
 
-        softAssertions.assertThatThrownBy(() -> listsService.getList(listId))
-                      .isInstanceOf(AssertionError.class);
-        softAssertions.assertAll();
+        Assertions.assertThat(listsService.getNonexistentList(listId).statusCode())
+                  .isEqualTo(HttpStatusCodes.STATUS_CODE_NOT_FOUND);
     }
 
     @Test

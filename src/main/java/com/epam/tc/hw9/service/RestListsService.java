@@ -44,6 +44,11 @@ public class RestListsService extends CommonService {
             .getBody().as(ListDto.class);
     }
 
+    public Response getNonexistentList(String id) {
+        return new CommonService()
+            .getWithError(String.format(URI.GET_LIST_BY_ID, id));
+    }
+
     public Response moveListToBoard(String listId, String boardId) throws JsonSyntaxException {
         HashMap<String, Object> parameters = new HashMap<>();
         parameters.put("value", boardId);
