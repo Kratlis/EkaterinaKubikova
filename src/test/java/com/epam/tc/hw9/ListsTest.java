@@ -31,13 +31,6 @@ public class ListsTest {
             .createBoard(DefaultObjectCreator.createBoard());
     }
 
-    @AfterMethod
-    public void clean() {
-        Arrays.stream(boardsService.getBoards())
-              .map(BoardDto::getId)
-              .forEach(boardsService::deleteBoard);
-    }
-
     @Test(description = "Create default list.")
     public void createList() {
         ListDto listForCreation = DefaultObjectCreator.createList();
@@ -109,5 +102,12 @@ public class ListsTest {
         JsonElement value = new Gson().fromJson(response, JsonObject.class).get("_value");
         softAssertions.assertThat(value.isJsonNull())
                       .isTrue();
+    }
+
+    @AfterMethod
+    public void clean() {
+        Arrays.stream(boardsService.getBoards())
+              .map(BoardDto::getId)
+              .forEach(boardsService::deleteBoard);
     }
 }

@@ -29,14 +29,6 @@ public class CardsTest {
             .createList(DefaultObjectCreator.createList().withIdBoard(board.getId()));
     }
 
-    @AfterMethod
-    public void clean() {
-        RestBoardsService restBoardsService = new RestBoardsService();
-        Arrays.stream(restBoardsService.getBoards())
-              .map(BoardDto::getId)
-              .forEach(restBoardsService::deleteBoard);
-    }
-
     @Test(description = "Create card.")
     public void createCard() {
         CardDto cardForCreation = DefaultObjectCreator.createCard();
@@ -64,5 +56,13 @@ public class CardsTest {
         softAssertions.assertThat(response)
                       .isEqualTo("The requested resource was not found.");
         softAssertions.assertAll();
+    }
+
+    @AfterMethod
+    public void clean() {
+        RestBoardsService restBoardsService = RestBoardsService.getInstance();
+        Arrays.stream(restBoardsService.getBoards())
+              .map(BoardDto::getId)
+              .forEach(restBoardsService::deleteBoard);
     }
 }

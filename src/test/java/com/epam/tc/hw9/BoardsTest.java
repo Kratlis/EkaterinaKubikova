@@ -23,13 +23,6 @@ public class BoardsTest {
         restBoardsService = RestBoardsService.getInstance();
     }
 
-    @AfterMethod(description = "Deleting all boards.")
-    public void clean() {
-        Arrays.stream(restBoardsService.getBoards())
-              .map(BoardDto::getId)
-              .forEach(restBoardsService::deleteBoard);
-    }
-
     @Test(description = "Create board.",
           dataProviderClass = TrelloDataProvider.class,
           dataProvider = "boardNames")
@@ -79,5 +72,12 @@ public class BoardsTest {
         JsonElement value = new Gson().fromJson(response, JsonObject.class).get("_value");
         softAssertions.assertThat(value.isJsonNull())
                       .isTrue();
+    }
+
+    @AfterMethod(description = "Deleting all boards.")
+    public void clean() {
+        Arrays.stream(restBoardsService.getBoards())
+              .map(BoardDto::getId)
+              .forEach(restBoardsService::deleteBoard);
     }
 }
